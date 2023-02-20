@@ -1,0 +1,160 @@
+.pret,
+.mainPret {
+    padding: 1rem 2rem;
+    overflow: auto;
+    font-family: "Roboto";
+}
+
+.pret h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.pret .textU1 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 100 !important;
+}
+
+.pret .conditions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    align-items: center;
+    padding: 2rem;
+    gap: 4rem;
+    background-color: #13203b;
+    border-radius: 5px;
+}
+
+.pret .formulaire {
+    background-color: #13203b;
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+.pret .pretPersonnel h1 {
+    font-weight: 300;
+}
+
+.pret .pretPersonnel h5 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.pret .pretPersonnel div div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.pret .pretPersonnel p {
+    font-size: 15px;
+    line-height: 1.5rem;
+}
+
+.pret .conditions img {
+    border-radius: 10px;
+    width: 500px;
+}
+
+.pret .formulaire .btns {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.pret .formulaire h1 {
+    font-weight: 100;
+}
+
+.pret .formulaire div button {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: .3rem 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pret .acc {
+    background-color: #13203b;
+    padding: 2rem 0;
+    border-radius: 5px;
+}
+
+.formData .MuiPaper-root.MuiPaper-outlined.MuiPaper-rounded.css-126nd9x-MuiPaper-root {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px !important;
+    border: 1px solid #394970;
+}
+
+.pret .simulateur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 0 !important;
+    gap: 1rem;
+}
+
+.pret .simulateur .input {
+    width: 400px;
+}
+
+.pret .simulateur .durree {
+    width: 400px;
+}
+
+.pret .simulateur input {
+    margin-right: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: .4rem;
+    border-radius: 5px;
+    padding: .65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #13203b;
+}
+
+.pret .simulateur select {
+    width: 100%;
+}
+
+.pret .calculateur {
+    display: flex;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    background-color: #131a2e;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.pret .hr {
+    border-bottom: 1px solid #394970;
+}
+
+.pret .calculateur .data {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pret .calculateur .req {
+    width: 60%;
+    margin-bottom: 1rem;
+}
+
+.pret .calculateur .rep {
+    border: 1px solid #293a5e;
+    width: 40%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}

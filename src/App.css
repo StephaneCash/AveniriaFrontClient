@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,300&display=swap');
+
+:root {
+  --blueClair: #0e172a;
+  --blueFonce: #13203b;
+  --boxShadow: 0px 19px 60px silver;
+  --activeItem: silver;
+  --black: #444;
+  --white: #fff;
+}
+
+* {
+  font-family: 'Roboto' !important;
+}
+
+button {
+  font-family: 'Roboto' !important;
+}
+
+.app {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--blueFonce);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  align-items: center;
+}
+
+.app .appGlass {
+  background-color: var(--blueClair);
+  display: grid;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  gap: 1rem;
+  overflow: hidden;
+  grid-template-columns: 11rem auto 20rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .app .appGlass {
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app .appGlass {
+    grid-template-columns: 1fr;
+  }
+
+  .app .appGlass::-webkit-scrollbar {
+    display: none;
+  }
+}

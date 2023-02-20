@@ -1,0 +1,308 @@
+.compteCustom {
+    font-family: Roboto, sans-serif;
+    background-color: var(--blueFonce);
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start !important;
+    flex-direction: column;
+    color: silver;
+}
+
+.compte {
+    background-color: #0e172a;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    gap: 1rem;
+    overflow: hidden;
+    grid-template-columns: 12rem auto;
+}
+
+.mainCompte {
+    color: silver;
+    border: 1px solid #253650;
+    overflow-y: auto;
+}
+
+.mainCompte .toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #13203b;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.mainCompte .textCompteIdAndDate {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+}
+
+.mainCompte .textCompteIdAndDate span:first-child {
+    font-weight: bold;
+    margin-bottom: .4rem;
+}
+
+.mainCompte .textCompteIdAndDate span:last-child {
+    font-size: 14px;
+}
+
+.mainCompte .photo {
+    display: flex;
+    padding: 1rem 2rem;
+    gap: 2rem;
+}
+
+
+.mainCompte .photo .userName {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainCompte .photo .userName span:first-child {
+    margin-bottom: .5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.mainCompte .photo .userName span:last-child {
+    font-size: .9rem;
+}
+
+.mainCompte .detailUser {
+    display: flex;
+    gap: 1rem;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+.compte .mainCompte .detailUser .activePDetail {
+    border-bottom: 1px solid silver;
+    padding-bottom: .4rem;
+    cursor: pointer;
+}
+
+.compte .form,
+.compte .formPaiement,
+.compte .formSecurite,
+.compte .auth {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    padding-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 4px;
+    border-top: 1px solid #1f3457;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.compte .form .contentForm,
+.compte .formPaiement .contentForm {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: .8rem;
+}
+
+.compte .form .contentForm label,
+.formPaiement label {
+    width: 25%;
+}
+
+.compte  input,
+.compte  input,
+.compte input {
+    flex: 1;
+    margin-right: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: .4rem;
+    border-radius: 5px;
+    padding: .65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #13203b;
+}
+
+.compte textarea,
+.compte select {
+    flex: 1;
+    margin-right: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: .4rem;
+    border-radius: 5px;
+    padding: .65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #13203b;
+}
+
+.compte .form .contentForm input::placeholder {
+    color: rgb(121, 117, 117);
+    background-color: #13203b;
+}
+
+.compte .form .button,
+.formPaiement .button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.compte .form .button button,
+.formPaiement .button button,
+.formSecurite .col1 .button button,
+.formSecurite .col2 .button button {
+    padding: .7rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: silver;
+    border: 1px solid silver;
+    margin-right: 2rem;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.form h4,
+.formPaiement h4,
+.formSecurite h4,
+.auth h4 {
+    border-bottom: 1px solid #253049;
+    padding-bottom: 1rem;
+}
+
+.compte .formSecurite {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+
+.compte .formSecurite .col1,
+.compte .formSecurite .col2 {
+    padding-left: 2rem;
+    border-radius: 4px;
+    padding-right: 2rem;
+    background-color: #13203b;
+}
+
+.formSecurite .col1 .button button,
+.formSecurite .col2 .button button {
+    float: right;
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.compte .auth {
+    margin-top: 1rem;
+    padding-bottom: 1rem
+}
+
+.compte .auth .grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 1rem;
+}
+
+.compte .auth .card h5 {
+    margin: 0;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.compte .auth .card {
+    border: 1px solid #3a4a69;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+.compte .auth .card:hover {
+    border: 1px solid #748ec2;
+}
+
+.compte .auth .card.activeCard {
+    background-color: #13203b;
+    border: 1px solid #748ec2;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.personal-image {
+    text-align: center;
+}
+
+.personal-image input[type="file"] {
+    display: none;
+}
+
+.personal-figure {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.personal-avatar {
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out .3s;
+}
+
+.personal-avatar:hover {
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.personal-figcaption {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    border-radius: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all ease-in-out .3s;
+}
+
+.personal-figcaption:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.personal-figcaption>img {
+    margin-top: 32.5px;
+    width: 50px;
+    height: 50px;
+}
+
+.btnChangeImage {
+    margin-top: 2rem;
+    width: 50%;
+    padding: 1rem;
+    background-color: #1f3457;
+    border: 1px solid #0e172a;
+    color: silver;
+    cursor: pointer;
+    border-radius: 5px;
+}

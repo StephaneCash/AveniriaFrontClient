@@ -1,0 +1,33 @@
+.createTransaction {
+    color: aliceblue !important;
+    overflow: auto;
+    padding: 0 2rem;
+    font-family: 'Roboto';
+}
+
+.createTransaction .configCompte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+    gap: 1rem;
+}
+
+.configCompte a {
+    text-decoration: none;
+}
+
+.configCompte button {
+    border-radius: 5px;
+    padding: .65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #0f1a32;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}

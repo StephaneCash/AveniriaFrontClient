@@ -1,0 +1,55 @@
+.compteTypeDevise {
+    padding: 1rem;
+    font-family: "Roboto";
+    overflow-y: auto;
+}
+
+.typeCompte {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 300px);
+    align-items: center;
+}
+
+.typeCompte .cardBloc {
+    padding: 2rem;
+    border: 1px solid #1d2a45;
+    position: relative;
+    text-align: left;
+    border-radius: 5px;
+    background-color: #101d3a;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+
+.typeCompte .card h4 {
+    font-size: 15px;
+}
+
+.alert {
+    background-color: #111f3f;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.name {
+    font-size: 18px;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.typeCompte .deviseType {
+    display: flex;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    font-size: 15px;
+}
+
+.typeCompte .deviseType .montant {
+    font-weight: bold;
+    font-size: 18px;
+}

@@ -1,0 +1,53 @@
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4 {
+    background-color: #0a182e !important;
+    border-bottom: 1px solid #1f3457 !important;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4 img {
+    width: 60px;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4 a {
+    text-decoration: none;
+    color: silver;
+    font-family: 'Roboto';
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiPaper-root.MuiMenu-paper {
+    background-color: #1f3457 !important;
+}
+
+.MuiList-root.MuiList-padding.MuiMenu-list a {
+    text-decoration: none !important;
+    color: silver !important;
+}
+
+.depot_retrait {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.depot_retrait button {
+    padding: 0.65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #0f1a32;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    font-size: 14px;
+}
+
+.depot_retrait .retrait {
+    margin-right: 2rem;
+}
+
+.depot_retrait a {
+    font-weight: 800;
+    display: flex;
+    gap: .6rem;
+    align-items: center;
+}

@@ -1,0 +1,65 @@
+.cartes {
+    padding: 1rem 2rem;
+    overflow: auto;
+    background-color: #13203b;
+    font-family: 'Roboto';
+}
+
+.cartes .cartesFull {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, 450px);
+    justify-content: center;
+    font-family: 'Roboto';
+}
+
+.cartes .cartesFull img {
+    width: 100%;
+}
+
+.cartes .MuiPaper-root.MuiPaper-elevation {
+    background-color: #0e172a;
+    color: silver;
+    font-family: 'Roboto' !important;
+}
+
+.cartes .MuiTypography-root.MuiTypography-body2 {
+    color: silver;
+    font-family: 'Roboto' !important;
+}
+
+.cartes .detailCard {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: .6rem;
+    font-family: 'Roboto' !important;
+}
+
+.cartes .detailCard div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Roboto' !important;
+}
+
+.cartes a {
+    text-decoration: none;
+    color: silver;
+    font-family: 'Roboto' !important;
+}
+
+.cartes button {
+    padding: .4rem 1.5rem;
+    cursor: pointer;
+    font-family: 'Roboto' !important;
+    font-size: 15px;
+    border: 1px solid #8788;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    gap: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}

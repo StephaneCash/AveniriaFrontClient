@@ -1,0 +1,21 @@
+.parametres {
+    font-family: Roboto, sans-serif;
+    background-color: var(--blueFonce);
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start !important;
+    flex-direction: column;
+    color: silver;
+}
+
+.sidebarParametres {
+    background-color: #0e172a;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    gap: 1rem;
+    overflow: hidden;
+    grid-template-columns: 12rem auto;
+    border: 1px solid red;
+}

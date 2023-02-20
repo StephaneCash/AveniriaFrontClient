@@ -1,0 +1,94 @@
+.login {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.login .form {
+    color: #fff;
+    border: 1px solid #2b3b64;
+    border-radius: 6px;
+    padding: 3rem;
+    background-color: #0e172a;
+    width: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/public/BewitchedAntiqueAllensbigearedbat-size_restricted.gif');
+    flex-direction: column;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.login .form .logoInnoverce {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .form img {
+    width: 60px;
+}
+
+.login .form .logoInnoverce span {
+    font-size: 1.5rem;
+}
+
+.login .form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.login input {
+    margin-bottom: 1rem;
+}
+
+.login input:focus {
+    outline: none;
+}
+
+.login .error {
+    color: #e65252;
+    border: 1px solid #e65252;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: #fff;
+}
+
+.login .form-control {
+    border-radius: 5px;
+    padding: .8rem;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.login .form .button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #2b3b64;
+    width: 100%;
+    color: #fff;
+    padding: 5px;
+    padding: .6rem;
+    font-size: 1rem;
+    margin-bottom: .7rem;
+    margin-top: 1rem;
+    background-color: #13203b;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.login p a {
+    color: silver;
+    text-decoration: none;
+}
+
+.createCompteLink a {
+    background-color: #13203b;
+    width: 100%;
+    padding: .6rem 1rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 5px;
+}

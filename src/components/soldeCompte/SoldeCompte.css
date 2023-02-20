@@ -1,0 +1,166 @@
+.mainSoldeCompte {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--blueFonce);
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start !important;
+    flex-direction: column;
+    color: silver;
+    overflow-y: auto;
+}
+
+.contentSoldeCompte {
+    background-color: #0e172a;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    gap: 1rem;
+    overflow: hidden;
+    grid-template-columns: 12rem auto;
+}
+
+.contentCompte {
+    overflow: auto;
+    text-align: center;
+}
+
+.configSolde .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 500px);
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+
+.configSolde .devise.actived {
+    background-color: #13203b;
+    border: 1px solid #182239;
+}
+
+.configSolde .devises .devise {
+    border: 1px solid #1b2945;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.configSolde h6 {
+    font-size: 1.1rem;
+}
+
+.configSolde .devises .devise p {
+    font-size: 1.5rem;
+}
+
+.configSolde .devises .devise button {
+    cursor: pointer;
+    padding: .4rem;
+    margin-bottom: 2rem;
+}
+
+.configSolde .devises {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.configSolde .card {
+    border: 1px solid #304061;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.configSolde .card.actived {
+    background-color: #13203b;
+    border: 1px solid #182239;
+}
+
+.contentCompte h4 {
+    font-size: 2rem;
+}
+
+.contentCompte .card h4 {
+    font-size: 1.2rem;
+}
+
+.configSolde .card img {
+    width: 100%;
+    height: 50vh;
+    min-height: 50vh;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.configSolde .card-body .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: justify;
+}
+
+.buttonValid {
+    position: relative;
+    margin-top: 1rem;
+    height: 60px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttonValid button {
+    float: right;
+    margin-right: 5rem;
+    width: 100px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #304061;
+    border: 1px solid #0e172a;
+    color: aliceblue;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.grilleEpargne {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 500px);
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.grilleEpargne .card {
+    border: 1px solid #182239;
+    padding: 1rem;
+}
+
+.grilleEpargne .card.actived {
+    background-color: #13203b;
+}
+
+.grilleEpargne .card .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    text-align: left;
+}
+
+.grilleEpargne .card .list div {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grilleEpargne .card button {
+    cursor: pointer;
+    padding: .4rem;
+    margin-bottom: 2rem;
+}

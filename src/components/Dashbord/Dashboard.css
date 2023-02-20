@@ -1,0 +1,64 @@
+.appDash {
+    font-family: Roboto, sans-serif;
+    background-color: var(--blueFonce);
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start !important;
+    flex-direction: column;
+    color: silver;
+}
+
+.dashbaordMain {
+    background-color: #0e172a;
+    display: grid;
+    border-radius: 5px;
+    gap: 1.5rem;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    grid-template-columns: 12rem 61rem 20rem;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    position: relative;
+    height: auto;
+    overflow-y: auto;
+}
+
+.dashboard h1 {
+    color: #fff;
+    margin-left: 2rem;
+}
+
+.noti {
+    color: whitesmoke;
+}
+
+.dashboard .cards{
+    display: flex;
+}
+
+.dashbaordMain .compteConf{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .dashboard {
+        justify-content: flex-start !important;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard {
+        align-items: center;
+    }
+}

@@ -1,0 +1,98 @@
+.cards {
+    display: grid;
+    gap: 1rem;
+}
+
+.cards .card {
+    background-color: #0d1b32;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 7px;
+    padding: 2rem;
+    height: auto !important;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card span {
+    text-align: center;
+}
+
+.cards .card:first-child {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.card .cardChilds {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cards .cardMin {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 7px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+    border: 1px solid #30436a;
+}
+
+.card .cardLastChild {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    display: flex;
+}
+
+.dashbaordMain .compteConf button {
+    padding: .5rem 2rem;
+    cursor: pointer;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: #204084;
+}
+
+.CircularProgressbar .CircularProgressbar-trail {
+    stroke: #6b778f;
+}
+
+.circular {
+    display: flex;
+    gap: 1rem;
+}
+
+.circular .cardLastChild {
+    width: 100px;
+}
+
+.apexcharts-canvas {
+    border: none !important;
+}
+
+.apexcharts-gridline {
+    stroke: #1e2942;
+}
+
+.apexcharts-xaxis-tick {
+    stroke: var(--neutral-70);
+}
+
+.apexcharts-yaxis-tick {
+    stroke: var(--neutral-70);
+}
+
+.apexcharts-grid-row {
+    fill: var(--neutral-70);
+}
+
+.apexcharts-title-text {
+    fill: var(--neutral-100);
+}
+
+

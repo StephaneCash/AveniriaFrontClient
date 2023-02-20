@@ -1,0 +1,29 @@
+.MuiTableRow-root.MuiTableRow-head>* {
+    font-weight: bold !important;
+}
+
+.css-1ex1afd-MuiTableCell-root,
+.css-1ygcj2i-MuiTableCell-root {
+    border-bottom: 0px solid silver !important;
+}
+
+.table h3 {
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+    .table {
+        width: 170%;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .table {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 18rem;
+    } 
+}

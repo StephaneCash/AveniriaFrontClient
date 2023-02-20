@@ -1,0 +1,28 @@
+.createMain {
+    padding: 1rem 2rem;
+}
+
+.createMain a {
+    text-decoration: none;
+    color: silver;
+    font-size: 14px;
+    display: flex;
+    gap: .7rem;
+    align-items: center;
+}
+
+.createMain form {
+    width: 50%;
+    display: flex;
+}
+
+.createMain .button {
+    width: 50%;
+}
+
+.createMain button {
+    margin-top: 1rem;
+    padding: .5rem 2rem;
+    cursor: pointer;
+    font-size: 14px;
+}

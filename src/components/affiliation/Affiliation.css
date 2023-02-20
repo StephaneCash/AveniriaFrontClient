@@ -1,0 +1,41 @@
+.affiliations {
+    padding: 1rem 2rem;
+    font-family: "Roboto";
+}
+
+.affiliations .data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    background-color: #13203b;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+.affiliations .data button {
+    cursor: pointer;
+    box-shadow: rgba(0, 1, 1, 0.05) 0px 6px 24px 0px, rgba(0, 0, 9, 0.08) 0px 0px 0px 1px;
+    padding: .8rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    font-size: 15px;
+    float: right;
+}
+
+.affiliations .data p {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    gap: 1rem;
+}
+
+.affiliations .data p span:first-child {
+    font-size: 1.6rem;
+}
+
+.affiliations .data p span:last-child {
+    font-size: 14px;
+}
