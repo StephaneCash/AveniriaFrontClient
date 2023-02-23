@@ -11,7 +11,7 @@ const Form1 = () => {
         setDataTransfert({ ...dataTransfert, 'devise': devise[0], "soldeMontant": parseInt(devise[1]), idDevise: devise[2] });
     };
 
-    console.log(dataTransfert)
+   // console.log(dataTransfert)
 
     return (
         <div className='form1'>

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { UserContext } from '../../../AppContext';
 import { ToastContainer, toast } from 'react-toastify';
-import { FaCheckCircle, FaChevronLeft } from 'react-icons/fa';
+import { FaCheckCircle, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import axios from 'axios';
 import { baseUrl } from '../../../bases/baseUrl';
 
 const Form3 = () => {
+
+  const [sum, setSum] = useState(0);
 
   const { activeStep, setActiveStep, deviseCompte,
     dataTransfert, compteUser, userDataCompte } = React.useContext(UserContext);
@@ -46,13 +48,31 @@ const Form3 = () => {
     }
   }
 
+  console.log(dataTransfert)
 
+  useEffect(() => {
+    if (dataTransfert) {
+      if (parseInt(dataTransfert.typeTransfert) === 2) {
+        let somme = 0;
+        for (let i = 0; i < dataTransfert.montant.length; i++) {
+          console.log(parseInt(dataTransfert.montant[i]))
+          somme = somme + parseInt(dataTransfert.montant[i]);
+        }
+        setSum(somme);
+      }
+    }
+
+  }, [dataTransfert]);
 
   return (
     <>
       <div className='form1'>
         <div className='alert'>
-          Montant : {dataTransfert && dataTransfert.montant}
+          Montant : {
+            dataTransfert && parseInt(dataTransfert.typeTransfert) === 1 ?
+              dataTransfert.montant :
+              sum
+          }
           {
             dataTransfert.devise === 'Dollar' ? "$" :
               dataTransfert.devise === "Euro" ? "€" :
@@ -62,7 +82,7 @@ const Form3 = () => {
         <div className='main'>
           <div className='card'>
             <div className='head'>
-              De :  {dataTransfert && dataTransfert.compte}
+              De : <i>  {dataTransfert && dataTransfert.compte} </i>
             </div>
             <div className='body'>
               <span>{compteUser && compteUser.numero}</span>
@@ -82,11 +102,18 @@ const Form3 = () => {
 
           <div className='card'>
             <div className='head'>
-              A :  {dataTransfert && dataTransfert.compte}
+              A : <i> {dataTransfert && dataTransfert.compte} </i>
             </div>
 
             <div className='body'>
-              <span> {dataTransfert && dataTransfert.numCompteDest}</span> <br />
+              <span> {
+                dataTransfert && dataTransfert && parseInt(dataTransfert.typeTransfert) === 1 ?
+                  dataTransfert.numCompteDest : dataTransfert.numCompteDest && typeof(dataTransfert.numCompteDest) === "object" && dataTransfert.numCompteDest.map(value => {
+                    return (
+                      <span> <FaChevronRight /> {value} <br /></span>
+                    )
+                  })
+              }</span> <br />
               <span>{dataTransfert && dataTransfert.pseudo}</span>
             </div>
 
