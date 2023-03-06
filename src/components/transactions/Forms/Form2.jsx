@@ -24,6 +24,7 @@ const Form2 = () => {
 
     const [array, setArray] = useState([]);
     const [pseudos, setPseudos] = useState([]);
+    const [comptesId, setComptesId] = useState([]);
 
     const handleChange = (e, i) => {
         const inputValue = [...dataChange];
@@ -52,7 +53,7 @@ const Form2 = () => {
         const valDelete = [...dataChange];
         valDelete.splice(i, 1)
         setDataChange(valDelete);
-    }
+    };
 
     const handleValidNumberTransfert = () => {
         const arr = [...dataChange, []]
@@ -61,6 +62,7 @@ const Form2 = () => {
 
     const getCompteUser = () => {
         let pseudosArr = [];
+        let arrComptesId = [];
         if (parseInt(dataTransfert.typeTransfert) === 2) {
             for (let i = 0; i < dataChange.length; i++) {
                 axios.get(baseUrl + "/comptes/getCompteByNum/" + dataChange[i])
@@ -71,21 +73,16 @@ const Form2 = () => {
                         arr.push(resp.data)
                         pseudosArr.push(resp.data.user.pseudo);
                         dataArr.push(...pseudos, resp.data.user.pseudo);
-                        setPseudos(pseudosArr)
-                        console.log(" PSEUDOS :: ", dataArr
-                        )
-                        const newArray = [...new Set(arr)]
+                        setPseudos(pseudosArr);
+                        arrComptesId.push(resp.data.compte._id);
+                        setComptesId(arrComptesId);
+
+                        const newArray = [...new Set(arr)];
                         setArray([...array, ...newArray]);
                         if (resp.status === 200) {
                             setValueCompte(resp.data);
                             setEtat(true);
                             setUserDataCompte(resp.data);
-
-                            setDataTransfert({
-                                ...dataTransfert,
-                                "compteIdDest": resp.data && resp.data.compte &&
-                                    [...dataTransfert.compteIdDest, resp.data.compte._id],
-                            });
                         } else {
                             setEtat(false);
                         }
@@ -178,13 +175,16 @@ const Form2 = () => {
     };
 
     useEffect(() => {
-        if (pseudos) {
+        if (pseudos && comptesId) {
             setDataTransfert({
                 ...dataTransfert,
-                "pseudo": pseudos
+                "pseudo": pseudos,
+                "compteIdDest": comptesId
             });
         }
-    }, [pseudos]);
+    }, [comptesId, pseudos]);
+
+    console.log(dataTransfert)
 
     return (
         <>

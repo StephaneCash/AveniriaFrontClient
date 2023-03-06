@@ -12,7 +12,7 @@ const Form3 = () => {
   const { activeStep, setActiveStep, deviseCompte,
     dataTransfert, compteUser, userDataCompte } = React.useContext(UserContext);
 
-  console.log(dataTransfert)
+  console.log(dataTransfert , " DATA TRANSFERT")
 
   const submitData = () => {
     axios.post(`${baseUrl}/transactions`, {
@@ -110,7 +110,6 @@ const Form3 = () => {
             </div>
           </div>
 
-
           <div className='card'>
             <div className='head'>
               A : <i> {dataTransfert && dataTransfert.compte} </i>
@@ -122,8 +121,11 @@ const Form3 = () => {
                   dataTransfert.numCompteDest : dataTransfert.numCompteDest && typeof (dataTransfert.numCompteDest) === "object"
                   && dataTransfert.numCompteDest.map((value, i) => {
                     return (
-                      <span> <FaChevronRight /> {value} {parseInt(dataTransfert.typeTransfert) === 2 && " : " +
-                        dataTransfert.pseudo[i]} <br />
+                      <span>
+                        <FaChevronRight /> {value} {
+                          dataTransfert && parseInt(dataTransfert.typeTransfert) === 2 && " : " +
+                          dataTransfert.pseudo && dataTransfert.pseudo[i]
+                        } <br />
                       </span>
                     )
                   })
