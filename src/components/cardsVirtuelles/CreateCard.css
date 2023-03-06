@@ -26,3 +26,11 @@
     cursor: pointer;
     font-size: 14px;
 }
+
+.cardSC{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}

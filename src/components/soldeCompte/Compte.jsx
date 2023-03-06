@@ -30,13 +30,16 @@ const Compte = (props) => {
                                     }
                                 </div>
 
-                                <div className='deviseType'>Montant :
+                                <div className='deviseType' style={{ display: "flex", justifyItems:"center"}}>Montant :
                                     <span className='montant'>{devise.montant}</span>
                                 </div>
+                                {
+                                    compteUser && compteUser.type === "Epargne" &&
+                                    <div className='deviseType'>Type :
+                                        <span>{devise.nom}</span>
+                                    </div>
+                                }
 
-                                <div className='deviseType'>Type :
-                                    <span>{devise.nom}</span>
-                                </div>
                             </div>
                         )
                     })

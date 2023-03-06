@@ -26,7 +26,6 @@ export default function BasicTable(props) {
             <TableContainer component={Paper}
                 style={{ backgroundColor: "#13203b", color: "white" }}
             >
-                <div style={{ borderBottom: "1px solid #3a4a69", marginBottom: "1.5rem" }}></div>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>

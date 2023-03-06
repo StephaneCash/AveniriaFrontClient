@@ -1,14 +1,17 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { FaArrowLeft } from 'react-icons/fa';
+import React, { useContext, useEffect, useState } from 'react'
+import { FaArrowLeft, FaRegFrownOpen } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import AppContext, { UserContext } from '../../AppContext';
 import { baseUrl } from '../../bases/baseUrl';
 import Navbar from '../navbar/Navbar';
 import Sidebar from '../sidebar/Sidebar';
 import "./CreateCard.css"
 
 const CreateCard = () => {
+
+    const { compteUser } = React.useContext(UserContext);
 
     const [btnClic, setBtnClic] = useState(false);
 
@@ -43,31 +46,49 @@ const CreateCard = () => {
                         <Link to="/compte/cards">
                             <FaArrowLeft /> Retour
                         </Link>
-                        <h3>Créer une carte</h3>
 
-                        <form>
-                            <select onChange={(e) => setType(e.target.value)}>
-                                <option value="" key="">--Choisir le type de carte--</option>
-                                <option value="Visa" key="">
-                                    VISA
-                                </option>
-                                <option value="MasterCard" key="">MASTERCARD</option>
-                            </select>
+                        {
+                            compteUser && compteUser.isValid === true ? (
+                                <>
+                                    <h3>Créer une carte</h3>
 
-                            <select onChange={(e) => setDevise(e.target.value)}>
-                                <option value="" key="">--Choisir la devise--</option>
-                                <option value="Usd" key="">USD</option>
-                                <option value="Euro" key="">EURO</option>
-                            </select>
-                        </form>
+                                    <form>
+                                        <select onChange={(e) => setType(e.target.value)}>
+                                            <option value="" key="">--Choisir le type de carte--</option>
+                                            <option value="Visa" key="">
+                                                VISA
+                                            </option>
+                                            <option value="MasterCard" key="">MASTERCARD</option>
+                                        </select>
 
-                        <div className='button'>
-                            <button onClick={createCardVirtual}>
-                                {btnClic ? (
-                                    <i className='fa fa-spinner fa-pulse'></i>
-                                ) : "Créer"}
-                            </button>
-                        </div>
+                                        <select onChange={(e) => setDevise(e.target.value)}>
+                                            <option value="" key="">--Choisir la devise--</option>
+                                            <option value="Usd" key="">USD</option>
+                                            <option value="Euro" key="">EURO</option>
+                                        </select>
+                                    </form>
+
+                                    <div className='button'>
+                                        <button onClick={createCardVirtual}>
+                                            {btnClic ? (
+                                                <i className='fa fa-spinner fa-pulse'></i>
+                                            ) : "Créer"}
+                                        </button>
+                                    </div>
+                                </>
+                            ) :
+                                <div className='cardSC configCompte'>
+                                    <FaRegFrownOpen size={25} style={{ marginBottom: "1rem" }} />
+                                    Votre compte n'est pas configuré veuillez le configurer ici
+                                    <br />
+                                    <Link to="/compte/config/compte-user">
+                                        <button type='button'>
+                                            Configurer votre compte
+                                        </button>
+                                    </Link>
+                                </div>
+                        }
+
                     </div>
                 </div>
             </div>
