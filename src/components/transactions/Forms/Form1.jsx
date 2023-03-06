@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { UserContext } from '../../../AppContext';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import "./Form.css";
+import { toast, ToastContainer } from "react-toastify";
+
 
 const Form1 = () => {
+
     const { setActiveStep, compteUser, activeStep, setDataTransfert, dataTransfert } = React.useContext(UserContext);
+    const [choixCompte, setChoixCompte] = useState(false);
 
     const handleOption = (e) => {
-        const devise = e.target.value.split('+');
-        setDataTransfert({ ...dataTransfert, 'devise': devise[0], "soldeMontant": parseInt(devise[1]), idDevise: devise[2] });
+        if (e.target.value) {
+            setChoixCompte(true);
+            const devise = e.target.value.split('+');
+            setDataTransfert({ ...dataTransfert, 'devise': devise[0], "soldeMontant": parseInt(devise[1]), idDevise: devise[2] });
+        }
     };
 
-   // console.log(dataTransfert)
+    const handleSuivantStep = () => {
+        if (choixCompte) {
+            setActiveStep(activeStep + 1)
+        } else {
+            toast.error('Veuillez choisir le type de compte svp !');
+        }
+    };
 
     return (
         <div className='form1'>
@@ -51,12 +64,13 @@ const Form1 = () => {
                 </button>
 
                 <button
-                    onClick={() => { setActiveStep(activeStep + 1) }}
+                    onClick={() => { handleSuivantStep() }}
                     style={{ display: "flex", alignItems: "center", gap: ".3rem", marginLeft: "5px" }}
                 >
                     Suivant <FaChevronRight />
                 </button>
             </div>
+            <ToastContainer />
         </div >
     )
 }

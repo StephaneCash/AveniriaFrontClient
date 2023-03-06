@@ -12,43 +12,54 @@ const Form3 = () => {
   const { activeStep, setActiveStep, deviseCompte,
     dataTransfert, compteUser, userDataCompte } = React.useContext(UserContext);
 
-  const handleSubmit = () => {
+  console.log(dataTransfert)
 
-    if (dataTransfert.soldeMontant > dataTransfert.montant) {
-      axios.post(`${baseUrl}/transactions`, {
-        type: deviseCompte && deviseCompte[0].nom === "epargne" ?
-          "epargne"
-          : deviseCompte && deviseCompte[0].nom === "courant" &&
-          "",
-        compteId: compteUser._id,
-        userId: compteUser.userId,
-        montant: dataTransfert.montant,
-        deviseArr: dataTransfert.devise,
-        deviseIdDest: userDataCompte.compte._id,
-        nomUserTransfere: dataTransfert && dataTransfert.pseudo,
-        motif: dataTransfert && dataTransfert.motif,
-        idDevise: dataTransfert && dataTransfert.idDevise,
-        compteIdDest: dataTransfert && dataTransfert.compteIdDest,
+  const submitData = () => {
+    axios.post(`${baseUrl}/transactions`, {
+      type: deviseCompte && deviseCompte[0].nom === "epargne" ?
+        "epargne"
+        : deviseCompte && deviseCompte[0].nom === "courant" &&
+        "",
+      compteId: compteUser._id,
+      userId: compteUser.userId,
+      montant: dataTransfert.montant,
+      deviseArr: dataTransfert.devise,
+      deviseIdDest: userDataCompte.compte._id,
+      nomUserTransfere: dataTransfert && dataTransfert.pseudo,
+      motif: dataTransfert && dataTransfert.motif,
+      idDevise: dataTransfert && dataTransfert.idDevise,
+      compteIdDest: dataTransfert && dataTransfert.compteIdDest,
+      typeTransfert: dataTransfert && dataTransfert.typeTransfert,
+    })
+      .then(resp => {
+        console.log(resp)
+        if (resp.status === 200) {
+          toast.success('Transaction effectuée avec succès')
+          setTimeout(() => {
+            window.location = "/compte/transactions"
+          }, 4000);
+        }
       })
-        .then(resp => {
-          console.log(resp)
-          if (resp.status === 200) {
-            toast.success('Transaction effectuée avec succès')
-            setTimeout(() => {
-              window.location = "/compte/transactions"
-            }, 4000);
-          }
-        })
-        .catch(err => {
-          console.log(err)
-        })
+      .catch(err => {
+        console.log(err)
+      })
+  };
 
+  const handleSubmit = () => {
+    if (parseInt(dataTransfert.typeTransfert) === 2) {
+      if (parseInt(dataTransfert.soldeMontant) > sum) {
+        submitData();
+      } else {
+        toast.error('Solde insuffisant')
+      }
     } else {
-      toast.error('Solde insuffisant')
+      if (parseInt(dataTransfert.soldeMontant) > parseInt(dataTransfert.montant)) {
+        submitData();
+      } else {
+        toast.error('Solde insuffisant')
+      }
     }
   }
-
-  console.log(dataTransfert)
 
   useEffect(() => {
     if (dataTransfert) {
@@ -108,13 +119,18 @@ const Form3 = () => {
             <div className='body'>
               <span> {
                 dataTransfert && dataTransfert && parseInt(dataTransfert.typeTransfert) === 1 ?
-                  dataTransfert.numCompteDest : dataTransfert.numCompteDest && typeof(dataTransfert.numCompteDest) === "object" && dataTransfert.numCompteDest.map(value => {
+                  dataTransfert.numCompteDest : dataTransfert.numCompteDest && typeof (dataTransfert.numCompteDest) === "object"
+                  && dataTransfert.numCompteDest.map((value, i) => {
                     return (
-                      <span> <FaChevronRight /> {value} <br /></span>
+                      <span> <FaChevronRight /> {value} {parseInt(dataTransfert.typeTransfert) === 2 && " : " +
+                        dataTransfert.pseudo[i]} <br />
+                      </span>
                     )
                   })
               }</span> <br />
-              <span>{dataTransfert && dataTransfert.pseudo}</span>
+              <span>
+                {parseInt(dataTransfert.typeTransfert) === 1 && dataTransfert.pseudo}
+              </span>
             </div>
 
             <div className='footer'>

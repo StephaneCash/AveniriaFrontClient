@@ -23,7 +23,7 @@ const Form2 = () => {
     const [montantArr, setMontantArr] = useState([]);
 
     const [array, setArray] = useState([]);
-
+    const [pseudos, setPseudos] = useState([]);
 
     const handleChange = (e, i) => {
         const inputValue = [...dataChange];
@@ -60,22 +60,32 @@ const Form2 = () => {
     };
 
     const getCompteUser = () => {
-        if (dataTransfert.typeTransfert === 2) {
+        let pseudosArr = [];
+        if (parseInt(dataTransfert.typeTransfert) === 2) {
             for (let i = 0; i < dataChange.length; i++) {
                 axios.get(baseUrl + "/comptes/getCompteByNum/" + dataChange[i])
                     .then(resp => {
                         const arr = [];
+                        const dataArr = [];
+
                         arr.push(resp.data)
+                        pseudosArr.push(resp.data.user.pseudo);
+                        dataArr.push(...pseudos, resp.data.user.pseudo);
+                        setPseudos(pseudosArr)
+                        console.log(" PSEUDOS :: ", dataArr
+                        )
                         const newArray = [...new Set(arr)]
                         setArray([...array, ...newArray]);
                         if (resp.status === 200) {
                             setValueCompte(resp.data);
                             setEtat(true);
                             setUserDataCompte(resp.data);
+
                             setDataTransfert({
-                                ...dataTransfert, 'pseudo': resp.data.user && resp.data.user.pseudo,
-                                "compteIdDest": resp.data && resp.data.compte && resp.data.compte._id
-                            })
+                                ...dataTransfert,
+                                "compteIdDest": resp.data && resp.data.compte &&
+                                    [...dataTransfert.compteIdDest, resp.data.compte._id],
+                            });
                         } else {
                             setEtat(false);
                         }
@@ -98,9 +108,10 @@ const Form2 = () => {
                         setValueCompte(resp.data);
                         setEtat(true);
                         setUserDataCompte(resp.data);
+                        console.log(resp.data)
                         setDataTransfert({
                             ...dataTransfert, 'pseudo': resp.data.user && resp.data.user.pseudo,
-                            "compteIdDest": resp.data && resp.data.compte && resp.data.compte._id
+                            "compteIdDest": resp.data && resp.data.compte && resp.data.compte._id,
                         })
                     } else {
                         setEtat(false);
@@ -157,7 +168,7 @@ const Form2 = () => {
                 toast.warning('Veuillez remplir tous les champs svp');
             }
         } else if (dataTransfert && dataTransfert.typeTransfert && parseInt(dataTransfert.typeTransfert) === 2) {
-            if (dataTransfert.montant.length !== dataTransfert.numCompteDest.length) {
+            if (dataTransfert.montant.length === undefined || dataTransfert.montant.length !== dataTransfert.numCompteDest.length) {
                 toast.error('Chaque transaction doit avoir un montant.')
             } else {
                 //console.log(dataTransfert);
@@ -165,6 +176,15 @@ const Form2 = () => {
             }
         }
     };
+
+    useEffect(() => {
+        if (pseudos) {
+            setDataTransfert({
+                ...dataTransfert,
+                "pseudo": pseudos
+            });
+        }
+    }, [pseudos]);
 
     return (
         <>
