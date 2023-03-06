@@ -24,7 +24,7 @@ export default function BasicTable(props) {
     const setTaillePret = props.setTaillePret;
 
     const getAllPrets = () => {
-        axios.get(baseUrl + "/prets")
+        axios.get(`${baseUrl}/prets/v1/users/${compteUser && compteUser.userId}`)
             .then(res => {
                 setPrets(res.data)
                 setTaillePret(res.data.taille)
@@ -36,7 +36,7 @@ export default function BasicTable(props) {
 
     React.useEffect(() => {
         getAllPrets();
-    }, []);
+    }, [compteUser]);
 
     React.useEffect(() => {
         setUserId(compteUser && compteUser.userId);
@@ -44,7 +44,7 @@ export default function BasicTable(props) {
 
     return (
         <div className='table'>
-            
+
             <TableContainer component={Paper}
                 style={{ backgroundColor: "#13203b", color: "white" }}
             >
