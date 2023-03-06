@@ -16,9 +16,8 @@ import Laoder from '../loader/Loader';
 export default function BasicTable(props) {
 
     const [prets, setPrets] = React.useState([])
-
     const [userId, setUserId] = React.useState('');
-
+    
     const { compteUser } = React.useContext(UserContext);
 
     const setTaillePret = props.setTaillePret;
