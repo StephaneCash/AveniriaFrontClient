@@ -1,0 +1,117 @@
+ .bureau {
+     background-color: #122448;
+     height: 480px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 2rem;
+     padding: 1rem 3rem !important;
+     margin: 0 2rem;
+     border-radius: 0px 0px 9px 9px;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ }
+
+ .bureau p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5rem;
+ }
+
+ .bureau p h4{
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-top: 5rem;
+ }
+
+ .mainBureau {
+     width: 80% !important;
+     border: 1px solid #1f325c !important;
+     border-radius: 5px;
+     height: 360px !important;
+     padding: 2rem;
+     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-color: #0f1e3e;
+ }
+
+ .mainBureau h1 {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     font-size: 1.3rem;
+     font-weight: 400;
+ }
+
+ .mainBureau .form {
+     width: 100%;
+     padding: 0 !important;
+     display: flex !important;
+     flex-direction: row;
+     gap: 3rem;
+     border: 0px solid #1f325c !important;
+     box-shadow: none !important;
+     margin-top: 2rem;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .mainBureau .form select,
+ .bureau .form input {
+     margin: 0;
+     width: 100% !important;
+ }
+
+ .mainBureau .form div{
+    width: 100%;
+ }
+
+ .bureau .button{
+    float: right;
+ }
+
+ .bureau .button button{
+    padding: .8rem 2rem;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #1f325c;
+    border: 0px solid #0e1d3e;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+ }
+
+ .form .flag{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+ }
+
+ .flag svg{
+    font-size: 10px !important;
+    width: 50px !important;
+    height: 50px !important;
+ }
+
+ .bureau .montant {
+    margin-top: .1rem;
+    color: silver;
+ }
+
+ .bureau .montantF{
+    margin-top: 1rem;
+    color: #728fc9;
+    font-size: 1.7rem;
+ }
+
+ .bureau .montant .affichage{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+ }
