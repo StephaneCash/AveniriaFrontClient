@@ -3,7 +3,7 @@ import Navbar from '../navbar/Navbar'
 import Sidebar from '../sidebar/Sidebar'
 import { countries } from 'country-flag-icons'
 import "./BureauDeChange.css"
-import { FaExchangeAlt } from 'react-icons/fa'
+import { FaExchangeAlt, FaGlobe } from 'react-icons/fa'
 import { UserContext } from '../../AppContext';
 import Flags from "country-flag-icons/react/3x2";
 import { toast, ToastContainer } from 'react-toastify';
@@ -52,7 +52,11 @@ const BureauDeChange = () => {
             toast.error('Veuillez entrer un montant à convertir svp !');
             setBtnClic(false);
         }
-    }
+    };
+
+    const handleConfirmConvert = () => {
+        //axios.post()
+    };
 
     return (
         <div className='compteCustom'>
@@ -61,12 +65,6 @@ const BureauDeChange = () => {
                 <Sidebar />
 
                 <div className='bureau'>
-                    <p>
-                        <h4>L'outil monétaire le mieux confiant</h4>
-                        Nous utilisons le taux de marché moyen pour notre convertisseur. <br />
-                        Le taux est donné à titre d'information seulement.
-                        Vous ne bénéficierez pas de ce taux lors d'un envoi d'argent.
-                    </p>
                     <div className='mainBureau'>
                         <h1>Convertir <FaExchangeAlt /> </h1>
                         <div>Votre solde
@@ -80,40 +78,6 @@ const BureauDeChange = () => {
                         </div>
 
                         <div className='form'>
-                            <div>
-                                <label>Montant</label>
-                                <input
-                                    type="number"
-                                    placeholder='Montant'
-                                    style={{ marginTop: "1rem" }}
-                                    onChange={(e) => setMontant(e.target.value)}
-                                />
-
-                                <div className='montant'>
-                                    <div>
-
-                                        <div className='affichage'>
-                                            {btnClic && montant} {devise === "Dollar" ? "Dollars américains " : devise === "Euro" ? " Euros " :
-                                                devise === "CDF" ? "Franc Congolais " : ''}
-                                            {
-                                                btnClic && " = "
-                                            }
-                                        </div>
-                                        <div className='montantF'>
-                                            {
-                                                sum
-                                            }
-                                            {
-                                                deviseDe === "CDF" ? " Franc Congolais" :
-                                                    deviseDe === "Dollar" ? " Dollars américains" :
-                                                        deviseDe === "Euro" ? " Euros" : ""
-                                            }
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
                             <div>
                                 <label>Choisir la devise</label>
                                 <div className='flag'>
@@ -148,10 +112,51 @@ const BureauDeChange = () => {
                                     }
                                 </select>
                             </div>
+
+                            <div>
+                                <label>Montant</label>
+                                <div className='flag'>
+                                    <FaGlobe />
+                                    <span>{devise}</span>
+                                </div>
+                                <input
+                                    type="number"
+                                    placeholder='Montant'
+                                    onChange={(e) => setMontant(e.target.value)}
+                                />
+                            </div>
+                        </div>
+
+                        <div className='montant'>
+                            <div>
+                                <div className='affichage'>
+                                    {btnClic && montant} {devise === "Dollar" ? "Dollars américains " : devise === "Euro" ? " Euros " :
+                                        devise === "CDF" ? "Franc Congolais " : ''}
+                                    {
+                                        btnClic && " = "
+                                    }
+                                </div>
+                                <div className='montantF'>
+                                    {
+                                        sum
+                                    }
+                                    {
+                                        deviseDe === "CDF" ? " Franc Congolais" :
+                                            deviseDe === "Dollar" ? " Dollars américains" :
+                                                deviseDe === "Euro" ? " Euros" : ""
+                                    }
+                                </div>
+                            </div>
+
                         </div>
 
                         <div className='button'>
                             <button onClick={handleConvert}>Convertir</button>
+                            {
+                                /*
+                                <button onClick={handleConfirmConvert}>Confirmer votre conversion</button>
+                                */
+                            }
                         </div>
                     </div>
                 </div>
