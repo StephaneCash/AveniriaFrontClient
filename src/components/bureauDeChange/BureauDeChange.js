@@ -82,6 +82,10 @@ const BureauDeChange = () => {
             })
             .catch(err => {
                 console.log(err);
+                toast.error(
+                    err && err.response && err.response.data &&
+                    err.response.data.message
+                )
             });
     };
 
@@ -93,7 +97,7 @@ const BureauDeChange = () => {
 
                 <div className='bureau'>
                     <div className='mainBureau'>
-                        <h1>Convertir <FaExchangeAlt /> </h1>
+                        <h1>Convertir votre argent <FaExchangeAlt /> </h1>
                         <div>Votre solde
                             {
                                 compteUser && compteUser.devises.map(val => {
@@ -144,18 +148,19 @@ const BureauDeChange = () => {
                         <div className='montant'>
                             <div>
                                 <div className='affichage'>
-                                    {btnClic && montant} {devise === "Dollar" ? "Dollars américains " : devise === "Euro" ? " Euros " :
-                                        devise === "CDF" ? "Franc Congolais " : ''}
+                                    {
+                                        devise === "Dollar" ? "Dollars américains " : devise === "Euro" ? " Euros " :
+                                            devise === "CDF" ? "Franc Congolais " : ''}
                                     {
                                         btnClic && " = "
                                     }
                                 </div>
                                 <div className='montantF'>
                                     {
-                                        btnClic ? sum : <span>La conversion sera affichée ici</span>
+                                        devise ? sum : <span>La conversion sera affichée ici</span>
                                     } <br />
                                     {
-                                        btnClic && montant && deviseDe === "CDF" ? " Franc Congolais" :
+                                        deviseDe === "CDF" ? " Franc Congolais" :
                                             deviseDe === "Dollar" ? " Dollars américains" :
                                                 deviseDe === "Euro" ? " Euros" : ""
                                     }
