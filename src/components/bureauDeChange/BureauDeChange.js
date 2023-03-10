@@ -67,7 +67,7 @@ const BureauDeChange = () => {
     };
 
     const handleConfirmConvert = () => {
-        axios.post(`${baseUrl}/convert`, {
+        axios.post(`${baseUrl}/taux/convert`, {
             compteId: compteUser && compteUser._id,
             deviseDe: devise,
             deviseVers: deviseDe,
@@ -76,6 +76,9 @@ const BureauDeChange = () => {
         })
             .then(() => {
                 toast.success("Conversion effectuée avec succès");
+                setTimeout(()=>{
+                    window.location.reload();
+                }, [3000]);
             })
             .catch(err => {
                 console.log(err);
