@@ -7,6 +7,8 @@ import { FaExchangeAlt, FaGlobe } from 'react-icons/fa'
 import { UserContext } from '../../AppContext';
 import Flags from "country-flag-icons/react/3x2";
 import { toast, ToastContainer } from 'react-toastify';
+import { baseUrl } from '../../bases/baseUrl'
+import axios from 'axios'
 
 
 const BureauDeChange = () => {
@@ -18,6 +20,7 @@ const BureauDeChange = () => {
     const [montant, setMontant] = useState("");
     const [btnClic, setBtnClic] = useState(false);
     const [sum, setSum] = useState(0);
+    const [confirm, setConfirm] = useState(false);
 
     const Flag = Flags[
         devise && devise !== null && devise !== undefined && devise === "Dollar" ? "US"
@@ -30,32 +33,53 @@ const BureauDeChange = () => {
     ];
 
     const handleConvert = () => {
-
         if (montant) {
             setBtnClic(true);
-            if (devise === "Dollar" && deviseDe === "CDF")
+            if (devise === "Dollar" && deviseDe === "CDF") {
                 setSum(parseInt(montant) * 2200);
-            if (devise === "Euro" && deviseDe === "CDF")
-                setSum(parseInt(montant) * 2171.60)
-            if (devise === "Euro" && deviseDe === "Dollar")
-                setSum(parseInt(montant) * 1.06)
-            if (devise === "Dollar" && deviseDe === "Euro")
-                setSum(parseInt(montant) * 0.94)
-            if (devise === "CDF" && deviseDe === "Dollar")
-                setSum(parseInt(montant) / 2200)
-            if (devise === "CDF" && deviseDe === "Euro")
-                setSum(parseInt(montant) / 2171.60)
-            if (devise === deviseDe) {
-                toast.error('Les deux devises doivent être différentes.')
+                setConfirm(true);
+            }
+            else if (devise === "Euro" && deviseDe === "CDF") {
+                setSum(parseInt(montant) * 2171.60);
+                setConfirm(true);
+            } else if (devise === "Euro" && deviseDe === "Dollar") {
+                setSum(parseInt(montant) * 1.06);
+                setConfirm(true);
+            } else if (devise === "Dollar" && deviseDe === "Euro") {
+                setSum(parseInt(montant) * 0.94);
+                setConfirm(true);
+            } else if (devise === "CDF" && deviseDe === "Dollar") {
+                setSum(parseInt(montant) / 2200);
+                setConfirm(true);
+            } else if (devise === "CDF" && deviseDe === "Euro") {
+                setSum(parseInt(montant) / 2171.60);
+                setConfirm(true);
+            }
+            else if (devise === deviseDe) {
+                toast.error('Les deux devises doivent être différentes.');
+                setConfirm(false);
             }
         } else {
             toast.error('Veuillez entrer un montant à convertir svp !');
             setBtnClic(false);
+            setConfirm(false);
         }
     };
 
     const handleConfirmConvert = () => {
-        //axios.post()
+        axios.post(`${baseUrl}/convert`, {
+            compteId: compteUser && compteUser._id,
+            deviseDe: devise,
+            deviseVers: deviseDe,
+            montantAconvertir: parseInt(montant),
+            montantConverti: parseInt(sum)
+        })
+            .then(() => {
+                toast.success("Conversion effectuée avec succès");
+            })
+            .catch(err => {
+                console.log(err);
+            });
     };
 
     return (
@@ -151,11 +175,17 @@ const BureauDeChange = () => {
                         </div>
 
                         <div className='button'>
-                            <button onClick={handleConvert}>Convertir</button>
                             {
-                                /*
-                                <button onClick={handleConfirmConvert}>Confirmer votre conversion</button>
-                                */
+                                confirm ? (
+                                    <button onClick={handleConfirmConvert}>
+                                        Confirmer votre conversion
+                                    </button>
+                                ) :
+                                    (
+                                        <button onClick={handleConvert}>
+                                            Convertir
+                                        </button>
+                                    )
                             }
                         </div>
                     </div>
