@@ -76,7 +76,7 @@ const BureauDeChange = () => {
         })
             .then(() => {
                 toast.success("Conversion effectuée avec succès");
-                setTimeout(()=>{
+                setTimeout(() => {
                     window.location.reload();
                 }, [3000]);
             })
@@ -139,19 +139,6 @@ const BureauDeChange = () => {
                                     }
                                 </select>
                             </div>
-
-                            <div>
-                                <label>Montant</label>
-                                <div className='flag'>
-                                    <FaGlobe />
-                                    <span>{devise}</span>
-                                </div>
-                                <input
-                                    type="number"
-                                    placeholder='Montant'
-                                    onChange={(e) => setMontant(e.target.value)}
-                                />
-                            </div>
                         </div>
 
                         <div className='montant'>
@@ -165,14 +152,27 @@ const BureauDeChange = () => {
                                 </div>
                                 <div className='montantF'>
                                     {
-                                        sum
-                                    }
+                                        btnClic ? sum : <span>La conversion sera affichée ici</span>
+                                    } <br />
                                     {
-                                        deviseDe === "CDF" ? " Franc Congolais" :
+                                        btnClic && montant && deviseDe === "CDF" ? " Franc Congolais" :
                                             deviseDe === "Dollar" ? " Dollars américains" :
                                                 deviseDe === "Euro" ? " Euros" : ""
                                     }
                                 </div>
+                            </div>
+
+                            <div>
+                                <label>Montant</label>
+                                <div className='flag' style={{ marginTop: "1rem" }}>
+                                    <FaGlobe size={40} />
+                                    <span>{devise}</span>
+                                </div>
+                                <input
+                                    type="number"
+                                    placeholder='Montant'
+                                    onChange={(e) => setMontant(e.target.value)}
+                                />
                             </div>
 
                         </div>
