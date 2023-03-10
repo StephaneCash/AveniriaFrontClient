@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from '../navbar/Navbar'
 import Sidebar from '../sidebar/Sidebar'
-import { countries } from 'country-flag-icons'
 import "./BureauDeChange.css"
 import { FaExchangeAlt, FaGlobe } from 'react-icons/fa'
 import { UserContext } from '../../AppContext';
