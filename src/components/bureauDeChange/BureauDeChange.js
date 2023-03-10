@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../navbar/Navbar'
 import Sidebar from '../sidebar/Sidebar'
 import "./BureauDeChange.css"
@@ -88,6 +88,10 @@ const BureauDeChange = () => {
             });
     };
 
+    useEffect(() => {
+        setConfirm(false);
+    }, [montant]);
+
     return (
         <div className='compteCustom'>
             <Navbar />
@@ -97,9 +101,10 @@ const BureauDeChange = () => {
                 <div className='bureau'>
                     <div className='mainBureau'>
                         <h1>Convertir votre argent <FaExchangeAlt /> </h1>
-                        <div>Votre solde
+                        <div style={{ background: "silver", padding: "1rem", color: "#444", width: "160px", maxWidth: "auto" }}>
+                            Votre solde :
                             {
-                                compteUser && compteUser.devises.map(val => {
+                                compteUser && compteUser.devises.map((val, i) => {
                                     if (val.devise === devise) {
                                         return " " + val.montant + " " + val.devise
                                     }
@@ -147,6 +152,7 @@ const BureauDeChange = () => {
                         <div className='montant'>
                             <div>
                                 <div className='affichage'>
+                                    { montant + " "}
                                     {
                                         devise === "Dollar" ? "Dollars américains " : devise === "Euro" ? " Euros " :
                                             devise === "CDF" ? "Franc Congolais " : ''}
