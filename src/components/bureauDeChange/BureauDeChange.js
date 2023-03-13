@@ -92,6 +92,10 @@ const BureauDeChange = () => {
         setConfirm(false);
     }, [montant]);
 
+     useEffect(() => {
+        setConfirm(false);
+    }, [devise, deviseDe]);
+
     return (
         <div className='compteCustom'>
             <Navbar />
