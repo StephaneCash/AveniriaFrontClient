@@ -17,6 +17,7 @@ const AppContext = () => {
     const [dataTransfert, setDataTransfert] = useState(null);
     const [userDataCompte, setUserDataCompte] = useState(null);
     const [pretData, setPretData] = useState({});
+  const [heureActuelle, setHeureActuelle] = useState(true);
 
     const [jwt, setJwt] = useState('');
 
@@ -62,7 +63,7 @@ const AppContext = () => {
                 console.log(err);
             });
     };
-    
+
     const getInfosUser = () => {
         axios
             .patch(baseUrl + "/user/infos", { userId: uid })
@@ -100,9 +101,15 @@ const AppContext = () => {
         };
     }, [uid]);
 
-    useEffect(()=>{
+    useEffect(() => {
         const userConnected = JSON.parse(localStorage.getItem('tokenUser'));
         setJwt(userConnected)
+    }, []);
+
+    useEffect(() => {
+        let now = new Date();
+        let heure = now.getHours();
+        setHeureActuelle(heure);
     }, []);
 
     return (
@@ -111,7 +118,7 @@ const AppContext = () => {
                 compteUser, userData, photoUser, activeStep,
                 infosUser, setInfosUser, InfosPaiement, uid,
                 setActiveStep, setDataTransfert, dataTransfert, setUserDataCompte, userDataCompte,
-                stepCurrent, setstepCurrent, setPretData, pretData,setUid
+                stepCurrent, setstepCurrent, setPretData, pretData, setUid, heureActuelle
             }}
         >
             <App />

@@ -192,7 +192,7 @@ const Form2 = () => {
                 <h4>Veuillez choisir un type de transaction et entrez toutes les données nécessaires</h4>
 
                 <p onClick={() => setCompte(1)} className={compte === 1 ? "actived" : ""}>
-                    <div className='content'>Comptes Innoverce {compte === 1 && <FaCheckCircle color='green' />}</div>
+                    <div className='content'>Comptes Aveniria {compte === 1 && <FaCheckCircle color='green' />}</div>
                 </p>
                 <p onClick={() => setCompte(2)} className={compte === 2 ? "actived" : ""}>
                     <div className='content'> Comptes d'autres banques {compte === 2 && <FaCheckCircle color='green' />}</div>
@@ -240,7 +240,7 @@ const Form2 = () => {
                                             type="text"
                                             className="formText"
                                             placeholder='Nom de la banque'
-                                            value={compte === 1 ? "Innoverce" : ""}
+                                            value={compte === 1 ? "Aveniria" : ""}
                                             disabled
                                         />
                                     </div>

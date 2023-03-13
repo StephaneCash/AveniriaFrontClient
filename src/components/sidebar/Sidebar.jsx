@@ -1,20 +1,18 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./Sidebar.css";
 import { SidebarData } from "../../data/Data";
 import { UilSignOutAlt, UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion"
-import cookie from "js-cookie";
-import { baseUrl } from '../../bases/baseUrl';
-import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from "../../AppContext";
 
 const Sidebar = () => {
 
-  const { userData } = useContext(UserContext);
+  const { userData, heureActuelle } = useContext(UserContext);
 
   const [selected, setSelected] = useState(0);
   const [show, setShow] = useState(true);
+
   const navigate = useNavigate();
 
   const sidebarVariants = {
@@ -26,23 +24,10 @@ const Sidebar = () => {
     }
   };
 
-  const removeCookie = (key) => {
-    if (window !== undefined) {
-      cookie.remove(key, { expires: 1 });
-    }
-  };
-
   const logutFunction = async () => {
-    await axios.get(`${baseUrl}/users/logout`)
-      .then(() => {
-        removeCookie('jwt')
-        navigate("/");
-      })
-      .catch(err => {
-        console.log(err.response)
-      });
+    localStorage.removeItem('tokenUser');
+    navigate('/');
   };
-
 
   return (
     <>
@@ -114,8 +99,12 @@ const Sidebar = () => {
             <UilSignOutAlt onClick={logutFunction} style={{ cursor: "pointer" }} />
           </div>
           <div className='menuItem'>
-            <NavLink to="/user/compte">
-              Bonjour {userData && userData.pseudo}
+            <NavLink to="/compte/config/profil">
+              {
+                heureActuelle && parseInt(heureActuelle) >= 6 && parseInt(heureActuelle) < 16 ? "Bonjour " :
+                  heureActuelle && parseInt(heureActuelle) >= 16 && parseInt(heureActuelle) < 20 ? "Bonsoir " :
+                    heureActuelle && parseInt(heureActuelle) >= 20 && parseInt(heureActuelle) < 6 ? "Bonne nuit " : ""
+              } {userData && userData.pseudo}
             </NavLink>
           </div>
         </div>
