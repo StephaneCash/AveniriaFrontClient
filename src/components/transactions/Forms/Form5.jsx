@@ -13,9 +13,7 @@ const Form5 = () => {
     const [montant, setMontant] = useState("");
     const [motif, setMotif] = useState("");
 
-    const { compteUser, setActiveStep } = useContext(UserContext);
-
-    console.log(compteUser)
+    const { compteUser } = useContext(UserContext);
 
     const handleError = (error) => {
         console.log(error)
