@@ -9,9 +9,10 @@ import Form2 from './Forms/Form2';
 import Form3 from './Forms/Form3';
 import Form4 from './Forms/Form4';
 import { UserContext } from '../../AppContext';
+import Form5 from './Forms/Form5';
 
 
-const labels = ["", "", "", ''];
+const labels = ["", "", "", '', ''];
 
 const handleSteps = (step) => {
     switch (step) {
@@ -23,6 +24,8 @@ const handleSteps = (step) => {
             return <Form2 />
         case 3:
             return <Form3 />
+        case 6:
+            return <Form5 />
         default:
             throw new Error("Etape non connue")
     }
@@ -31,6 +34,9 @@ const handleSteps = (step) => {
 export default function FormStepper() {
 
     const { activeStep } = React.useContext(UserContext);
+
+    console.log(activeStep , " ACTIVE STEP ")
+
 
     return (
         <>

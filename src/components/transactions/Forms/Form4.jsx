@@ -9,9 +9,11 @@ const Form4 = () => {
   const { setDataTransfert, dataTransfert, activeStep, setActiveStep } = useContext(UserContext);
 
   useEffect(() => {
-    if (typeTransfert !== 0) {
+    if (parseInt(typeTransfert) === 1 || parseInt(typeTransfert) === 2) {
       setDataTransfert({ ...dataTransfert, 'typeTransfert': typeTransfert });
       setActiveStep(activeStep + 1);
+    } else if (parseInt(typeTransfert) === 6) {
+      setActiveStep(6);
     }
   }, [typeTransfert]);
 
@@ -23,6 +25,7 @@ const Form4 = () => {
           <option value={0}>--Choisir un type de transfert--</option>
           <option value={1}>Envoi à un compte</option>
           <option value={2}>Envoi à plusieurs comptes</option>
+          <option value={6}>Payement par QR CODE</option>
         </select>
       </div>
     </div>
