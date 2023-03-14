@@ -19,3 +19,7 @@
     grid-template-columns: 12rem auto;
     border: 1px solid red;
 }
+
+.mainParametre {
+    margin: 2rem;
+}

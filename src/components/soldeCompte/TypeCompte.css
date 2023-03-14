@@ -34,6 +34,7 @@
     align-items: center;
     margin-bottom: 1rem;
     border-radius: 5px;
+    gap: 5rem;
 }
 
 .name {

@@ -133,11 +133,13 @@ const InfosProfil = () => {
                         <option value="" key="">--Votre sexe--</option>
                         <option
                             value={"M"}
+                            selected={sexe && sexe === "M" ? true : false}
                         >
                             Homme
                         </option>
                         <option
                             value={"F"}
+                            selected={sexe && sexe === "F" ? true : false}
                         >
                             Femme
                         </option>

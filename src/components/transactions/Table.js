@@ -39,7 +39,7 @@ export default function BasicTable(props) {
                     </TableHead>
                     <TableBody>
                         {
-                            data && data.data ? data.data.filter(value => {
+                            data && data.data && data.data.length > 0 ? data.data.filter(value => {
                                 const motif = value.motif.toLowerCase();
                                 const client = value.nomClient.toLowerCase();
 
@@ -77,9 +77,19 @@ export default function BasicTable(props) {
                                 }
                                 ) :
 
-                                <TableCell align="left" style={{ color: "silver", textAlign: "center" }} colSpan="6px">
-                                    <Laoder />
-                                </TableCell>
+                                data && data.data && data.data.length === 0 ?
+                                    <TableCell colSpan="6px"
+                                        style={{
+                                            textAlign: "center",
+                                            color: "silver"
+                                        }}
+                                    >
+                                        Pas de données disponibles.
+                                    </TableCell> :
+
+                                    <TableCell align="left" style={{ color: "silver", textAlign: "center" }} colSpan="6px">
+                                        <Laoder />
+                                    </TableCell>
                         }
                     </TableBody>
                 </Table>

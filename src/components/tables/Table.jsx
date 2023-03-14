@@ -41,7 +41,7 @@ export default function BasicTable(props) {
                     </TableHead>
                     <TableBody>
                         {
-                            data && data.data ? data.data.map((row, i) => {
+                            data && data.data && data.data.length > 0 ? data.data.map((row, i) => {
                                 if (row.userId === userId) {
                                     return (
                                         <TableRow
@@ -68,9 +68,14 @@ export default function BasicTable(props) {
                             }
                             ) :
 
-                                <TableCell align="left" style={{ color: "silver", textAlign: "center" }} colSpan="6px">
-                                    <Laoder />
-                                </TableCell>
+                                data && data.data && data.data.length === 0 ?
+                                    <TableCell style={{ color: "silver", textAlign: "center" }} colSpan="6px">
+                                        Pas de données disponibles.
+                                    </TableCell>
+                                    :
+                                    <TableCell align="left" style={{ color: "silver", textAlign: "center" }} colSpan="6px">
+                                        <Laoder />
+                                    </TableCell>
                         }
                     </TableBody>
                 </Table>

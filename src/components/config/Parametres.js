@@ -4,12 +4,15 @@ import Sidebar from '../sidebar/Sidebar'
 import "./Parametres.css"
 
 const Parametres = () => {
+
     return (
         <div className='compteCustom'>
             <Navbar />
             <div className='compte'>
                 <Sidebar />
-                <div className='mainParametre'>Main</div>
+                <div className='mainParametre'>
+                    Paramètres
+                </div>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./Sidebar.css";
 import { SidebarData } from "../../data/Data";
 import { UilSignOutAlt, UilBars } from "@iconscout/react-unicons";

@@ -8,13 +8,24 @@ const Compte = (props) => {
     const { userData } = useContext(UserContext);
     const compteUser = props.compteUser;
 
+    console.log( "TYPE :: ", compteUser)
+
     return (
         <div className='compteTypeDevise'>
             <div className='name'>Salut {userData && userData.pseudo}</div>
 
             <div className='alert'>
-                Numéro de compte : {compteUser && compteUser.numero} <br /><br />
-                Type compte : {compteUser && compteUser.type}
+                <div>
+                    Numéro de compte : {compteUser && compteUser.numero} <br /><br />
+                    Type compte : {compteUser && compteUser.type}
+                </div>
+
+                <div>
+                    <label htmlFor="">Votre code qr </label> <br />
+                    <a href={compteUser && compteUser.urlQR} download>
+                        <img src={compteUser && compteUser.urlQR} alt="" />
+                    </a>
+                </div>
             </div>
 
             <div className='typeCompte'>
@@ -30,7 +41,7 @@ const Compte = (props) => {
                                     }
                                 </div>
 
-                                <div className='deviseType' style={{ display: "flex", justifyItems:"center"}}>Montant :
+                                <div className='deviseType' style={{ display: "flex", justifyItems: "center" }}>Montant :
                                     <span className='montant'>{devise.montant}</span>
                                 </div>
                                 {
