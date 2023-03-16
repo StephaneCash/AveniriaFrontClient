@@ -86,67 +86,73 @@ function Card() {
     ];
 
     return (
-        <div className='cards'>
+        <div className='row'>
+            <div className='col-sm-6'>
+                <div className='card' style={{ padding: "0 3rem" }}>
+                    <div>Solde</div>
+                    <div className='cardChilds'>
+                        {
+                            compteUser ? compteUser.devises.map((devise, i) => {
+                                return (
+                                    <div className='cardMin' key={devise._id}>
+                                        {
+                                            devise.devise === "Dollar" ?
+                                                "$ " : devise.devise === "Euro" ?
+                                                    "€ " : devise.devise === "CDF" ? "CDF " : ""
+                                        }
+                                        <span>{devise.montant}</span>
 
-            <div className='card' style={{ padding: "0 3rem" }}>
-                <div>Solde</div>
-                <div className='cardChilds'>
-                    {
-                        compteUser ? compteUser.devises.map((devise, i) => {
-                            return (
-                                <div className='cardMin' key={devise._id}>
-                                    {
-                                        devise.devise === "Dollar" ?
-                                            "$ " : devise.devise === "Euro" ?
-                                                "€ " : devise.devise === "CDF" ? "CDF " : ""
-                                    }
-                                    <span>{devise.montant}</span>
-
+                                    </div>
+                                )
+                            }) : <Laoder />
+                        }
+                    </div>
+                    <div className='col-sm-12 cardsCircular'>
+                        <div className='col-sm-4'>
+                            <div className='card'>
+                                <div className='cardLastChild'>
+                                    <FaCcVisa size={50} /> <div>(Usage)</div>
                                 </div>
-                            )
-                        }) : <Laoder />
-                    }
-                </div>
-
-                <div className='circular'>
-                    <div className='cardCircular'>
-                        <div className='cardLastChild'>
-                            <span style={{ margin: "1rem" }}> <FaList size={33} /> Transferts gratuits </span>
-                        </div>
-                        <CircularProgressbarWithChildren value={66}>
-                            <div style={{ fontSize: 12, marginTop: -5 }}>
-                                <strong>66%</strong>
+                                <CircularProgressbarWithChildren value={100}>
+                                    <div style={{ fontSize: 12, marginTop: -5 }}>
+                                        <strong>100%</strong>
+                                    </div>
+                                </CircularProgressbarWithChildren>
                             </div>
-                        </CircularProgressbarWithChildren>
-                    </div>
-
-                    <div className='cardCircular'>
-                        <div className='cardLastChild'>
-                            <span style={{ margin: "1rem" }}> <FaCcVisa size={50} /> (Usage)</span>
                         </div>
-                        <CircularProgressbarWithChildren value={100}>
-                            <div style={{ fontSize: 12, marginTop: -5 }}>
-                                <strong>100%</strong>
+                        <div className='col-sm-4'>
+                            <div className='card'>
+                                <div className='cardLastChild'>
+                                    <FaCcMastercard size={50} />
+                                    <div>(Usage)</div>
+                                </div>
+                                <CircularProgressbarWithChildren value={66}>
+                                    <div style={{ fontSize: 12, marginTop: -5 }}>
+                                        <strong>66%</strong>
+                                    </div>
+                                </CircularProgressbarWithChildren>
                             </div>
-                        </CircularProgressbarWithChildren>
-                    </div>
-
-                    <div className='cardCircular'>
-                        <div className='cardLastChild'>
-                            <span style={{ margin: "1rem" }}> <FaCcMastercard size={50} /> (Usage)</span>
                         </div>
-                        <CircularProgressbarWithChildren value={100}>
-                            <div style={{ fontSize: 12, marginTop: -5 }}>
-                                <strong>100%</strong>
+                        <div className='col-sm-4'>
+                            <div className='card'>
+                                <div className='cardLastChild'>
+                                    <FaList size={33} /> <div>Transferts gratuits</div>
+                                </div>
+                                <CircularProgressbarWithChildren value={100}>
+                                    <div style={{ fontSize: 12, marginTop: -5 }}>
+                                        <strong>100%</strong>
+                                    </div>
+                                </CircularProgressbarWithChildren>
                             </div>
-                        </CircularProgressbarWithChildren>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div className='card'>
-                <span>Vos activités</span>
-                <Chart options={options} series={series} type="bar" width={500} height={300} />
+            <div className='col-sm-6'>
+                <div className='card'>
+                    <span>Vos activités</span>
+                    <Chart options={options} series={series} type="bar" width={320} height={300} />
+                </div>
             </div>
         </div >
     )

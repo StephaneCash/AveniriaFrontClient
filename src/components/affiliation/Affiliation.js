@@ -24,12 +24,14 @@ const Affiliation = () => {
     };
 
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
+            <div className='col-sm-12 affiliationContent'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
 
-                <div className='affiliations'>
+                <div className='col-sm-10 affiliations'>
                     <div className='data'>
                         <p>
                             <span>Invitez vos amis et Gagnez de l'argent.</span>
@@ -45,7 +47,7 @@ const Affiliation = () => {
             </div>
 
             <ToastContainer />
-        </div>
+        </>
     )
 }
 

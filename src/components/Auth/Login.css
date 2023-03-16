@@ -12,7 +12,7 @@
     border-radius: 6px;
     padding: 3rem;
     background-color: #0e172a;
-    width: 310px;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,9 +60,7 @@
 
 .login .form-control {
     border-radius: 5px;
-    padding: .8rem;
     width: 100% !important;
-    box-sizing: border-box;
 }
 
 .login .form .button {

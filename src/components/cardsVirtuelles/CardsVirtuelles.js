@@ -8,17 +8,22 @@ import MediaCard from './Card';
 
 const CardsVirtuelles = () => {
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
-                <div className='cartes'>
-                    <div className='cartesFull'>
-                        <MediaCard img1={visa} img2={master} />
+            <div className='col-sm-12 cartesVirtuelles'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
+
+                <div className='col-sm-10'>
+                    <div className='cartes'>
+                        <div className='cartesFull'>
+                            <MediaCard img1={visa} img2={master} />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -1,40 +1,18 @@
-.cards {
-    display: grid;
-    gap: 1rem;
-}
-
-.cards .card {
-    background-color: #0d1b32;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    border-radius: 7px;
-    padding: 2rem;
-    height: auto !important;
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.cards .card span {
-    text-align: center;
-}
-
-.cards .card:first-child {
-    display: flex !important;
-    flex-direction: column;
-}
-
-.card .cardChilds {
+.appDash .cardChilds {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
 }
 
-.cards .cardMin {
+.appDash .cardChilds .card {
+    width: 100% !important;
+    border: 1px solid red !important;
+}
+
+.appDash .cardMin {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 7px;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,9 +22,10 @@
 
 .card .cardLastChild {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    margin-top: 2rem;
-    display: flex;
+    align-items: center;
+    font-size: 14px;
 }
 
 .dashbaordMain .compteConf button {
@@ -65,6 +44,7 @@
 .circular {
     display: flex;
     gap: 1rem;
+    border: 1px solid red;
 }
 
 .circular .cardLastChild {
@@ -95,4 +75,17 @@
     fill: var(--neutral-100);
 }
 
+.cardsCircular {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
 
+.cardsCircular .card {
+    height: auto !important;
+    margin-top: 2rem !important;
+    height: 200px !important;
+    text-align: center !important;
+    border: 1px solid #536999 !important;
+    border-radius: 2px !important;
+}

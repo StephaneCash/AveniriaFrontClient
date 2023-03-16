@@ -1,6 +1,8 @@
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4 {
     background-color: #0a182e !important;
     border-bottom: 1px solid #1f3457 !important;
+    position: fixed;
+    z-index: 1;
 }
 
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4 img {

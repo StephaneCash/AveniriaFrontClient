@@ -23,7 +23,7 @@ export default function BasicTable(props) {
     }, [compteUser]);
 
     return (
-        <div className='table'>
+        <div className='tableTransaction'>
             <h3>Dernières transactions</h3>
             <TableContainer component={Paper}
                 style={{ backgroundColor: "#13203b", color: "white" }}

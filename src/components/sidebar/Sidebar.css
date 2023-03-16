@@ -6,6 +6,7 @@
     padding-top: 2rem;
     transition: all 300ms ease;
     background-color: transparent;
+    position: fixed;
 }
 
 .sidebar .logo {
@@ -44,7 +45,7 @@
 .menu .menuItem {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: .8rem;
     height: 1.7rem;
     margin-left: 2rem;
     position: relative;
@@ -56,6 +57,7 @@
 .menu .menuItem a {
     text-decoration: none;
     color: silver;
+    margin-top: 12rem;
 }
 
 .menu .menuItem:hover {

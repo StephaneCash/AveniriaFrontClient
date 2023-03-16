@@ -22,7 +22,7 @@ const rows = [
 export default function BasicTable(props) {
     return (
         <div className='table'>
-            <h3 style={{ textAlign: "left", display: "flex", alignItems: "center", gap: "1rem" }}>
+            <h3 style={{ textAlign: "left", display: "flex", alignItems: "center", gap: "1rem", color: "silver", fontSize: "18px" }}>
                 Vos Affiliations <FaHistory />
             </h3>
             <TableContainer component={Paper}

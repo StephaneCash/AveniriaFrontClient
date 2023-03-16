@@ -42,11 +42,13 @@ const Pret = () => {
     }, []);
 
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
-                <div className='pret'>
+            <div className='avantPret col-sm-12'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
+                <div className='pret col-sm-10'>
                     {
                         !showMainForm &&
                         <>
@@ -94,7 +96,6 @@ const Pret = () => {
                         {
                             !showMainForm &&
                             <>
-                                <div className='hr'></div>
                                 <p style={{
                                     textAlign: "center", display: "flex", alignItems: "center",
                                     justifyContent: "center", fontSize: "16px", gap: "1rem"
@@ -154,7 +155,8 @@ const Pret = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
+
     )
 }
 

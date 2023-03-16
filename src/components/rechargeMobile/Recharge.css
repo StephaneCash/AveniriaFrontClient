@@ -1,7 +1,25 @@
 .recharge .textLogo {
     display: flex;
-    align-items: center;
+    align-items: center !important;
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
     gap: 1rem;
+}
+
+.recharge .textLogo h1 {
+    font-size: 18px;
+}
+
+.rechargeMobile {
+    display: flex;
+    background-color: #0f1a32;
+    height: 100vh;
+    color: silver;
+}
+
+.rechargeMobile .col-sm-2,
+.rechargeMobile .col-sm-10 {
+    margin-top: 70px !important;
 }
 
 .recharge {
@@ -27,7 +45,7 @@
     font-size: 1.7rem;
 }
 
-.recharge .content{
+.recharge .content {
     padding: 2rem;
     background-color: #13203b;
     border-radius: 5px;
@@ -35,17 +53,22 @@
 
 .recharge .main {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 240px);
+    grid-template-columns: repeat(auto-fill, 220px);
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+
+.recharge .main .card {
+    background-color: #1d2e52 !important;
 }
 
 .recharge .content .search {
     margin-bottom: 2rem;
 }
 
-.recharge .content  input {
+.recharge .content input {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     padding: .65rem;

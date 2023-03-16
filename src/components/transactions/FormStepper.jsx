@@ -35,9 +35,6 @@ export default function FormStepper() {
 
     const { activeStep } = React.useContext(UserContext);
 
-    console.log(activeStep , " ACTIVE STEP ")
-
-
     return (
         <>
             {

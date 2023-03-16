@@ -11,12 +11,14 @@ const Crypto = () => {
     };
 
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
+            <div className='col-sm-12 dataCrypto'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
 
-                <div className='crypto'>
+                <div className='col-sm-10 crypto'>
                     <div className='mainCrypto'>
                         <FaBitcoin size={80} />
                         <p>Gérer votre compte cryptomonaie</p>
@@ -24,7 +26,7 @@ const Crypto = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

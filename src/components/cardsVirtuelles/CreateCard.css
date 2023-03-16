@@ -2,6 +2,50 @@
     padding: 1rem 2rem;
 }
 
+.createCartesV {
+    display: flex;
+    background-color: #13203b;
+    height: 100vh;
+    color: silver;
+}
+
+.createCartesV h3 {
+    margin-top: 1rem;
+    font-size: 18px;
+    margin-bottom: 2rem;
+}
+
+.createCartesV select {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: .4rem;
+    border-radius: 5px;
+    padding: .65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #13203b;
+    margin-right: 1rem;
+}
+
+.createCartesV button {
+    border-radius: 5px;
+    padding: 0.65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #0f1a32;
+    cursor: pointer;
+    width: auto !important;
+}
+
+.createCartesV .col-sm-2,
+.createCartesV .col-sm-10 {
+    margin-top: 70px !important;
+}
+
 .createMain a {
     text-decoration: none;
     color: silver;
@@ -27,7 +71,7 @@
     font-size: 14px;
 }
 
-.cardSC{
+.cardSC {
     display: flex;
     flex-direction: column;
     justify-content: center;

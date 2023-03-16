@@ -3,27 +3,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #fff;
-  cursor: pointer;
-
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #394c77;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #394c77;
-}
 
 .loader {
   width: 48px;
@@ -34,13 +13,18 @@ body {
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
   }
 
-  @keyframes rotation {
-  0% {
-      transform: rotate(0deg);
-  }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  } 
+}
+
+#apexchartsfteuicpt-yaxis {
+  color: silver !important;
+}

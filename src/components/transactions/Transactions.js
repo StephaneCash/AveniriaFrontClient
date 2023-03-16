@@ -45,35 +45,40 @@ const Transactions = () => {
     };
 
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
-                <div className='transactions'>
+            <div className='col-sm-12 transactionContent'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
+                <div className='col-sm-10 content' style={{ marginTop: "75px" }}>
                     <Link to="/dashboard" className='retour'>
                         <FaArrowLeft /> Retour
                     </Link>
 
                     <div className='contentTable'>
                         <div className='alertContent'>
-                            <div className='bloc1'>
+                            <div className='col-sm-12'>
                                 <h6>({transactions && transactions.taille ? transactions.taille : "0"}) Transactions</h6>
-                                <div className='depot_retrait'>
-                                    <button>
-                                        <Link to='/compte/depot'>
-                                            Effecteur un dépôt
+                                <div className='btns'>
+                                    <div className='col-sm-9'>
+                                        <button>
+                                            <Link to='/compte/depot'>
+                                                Effecteur un dépôt
+                                            </Link>
+                                        </button>
+                                        <button>
+                                            <Link to='/compte/retrait'>
+                                                Effecteur un retrait
+                                            </Link>
+                                        </button>
+                                    </div>
+
+                                    <div className='col-sm-3'>
+                                        <Link to="/compte/transactions/transfert-argent">
+                                            <button className='transfertBtn' type='button'>Transférer de l'argent</button>
                                         </Link>
-                                    </button>
-                                    <button className='retrait'>
-                                        <Link to='/compte/retrait'>
-                                            Effecteur un retrait
-                                        </Link>
-                                    </button>
-                                </div>
-                                <div className='transfert'>
-                                    <Link to="/compte/transactions/transfert-argent">
-                                        <button className='transfertBtn' type='button'>Transférer de l'argent</button>
-                                    </Link>
+                                    </div>
                                 </div>
                             </div>
 
@@ -93,7 +98,7 @@ const Transactions = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

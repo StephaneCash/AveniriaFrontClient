@@ -5,6 +5,19 @@
     font-family: 'Roboto';
 }
 
+.cartesVirtuelles {
+    display: flex;
+    background-color: #13203b;
+}
+
+.cartesVirtuelles .col-sm-2 {
+    margin-top: 70px !important;
+}
+
+.cartesVirtuelles .col-sm-10 {
+    margin-top: 70px !important;
+}
+
 .cartes .cartesFull {
     display: grid;
     gap: 1rem;

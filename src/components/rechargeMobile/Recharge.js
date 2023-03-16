@@ -13,24 +13,25 @@ import { Link } from 'react-router-dom'
 
 const Recharge = () => {
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
-                <div className='recharge'>
+            <div className='col-sm-12 rechargeMobile'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
+
+                <div className='col-sm-10 recharge'>
                     <Link to="/dashboard" className='retour'>
                         <FaArrowLeft /> Retour
                     </Link>
                     <div className='textLogo'>
-                        <span>
-                            <img src={cd} alt="Logo_RDC" />
-                        </span>
-                        <p>Recharge Mobile - Congo-Kinshasa</p>
+                        <img src={cd} alt="Logo_RDC" />
+                        <h1>Recharge Mobile - Congo-Kinshasa</h1>
                     </div>
 
                     <div className='content'>
                         <div className='search'>
-                            <input type="search" placeholder='Rechercher...' /> 
+                            <input type="search" placeholder='Rechercher...' />
                         </div>
                         <div className='main'>
                             <div className='card'>
@@ -56,7 +57,7 @@ const Recharge = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

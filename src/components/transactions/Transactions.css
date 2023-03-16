@@ -1,95 +1,78 @@
-.transactions {
-    padding: 1rem 2rem;
+.transactionContent {
+    padding: 1rem 0rem;
     overflow: auto;
     font-family: 'Roboto';
 }
 
-.transactions .retour {
-    display: flex;
-    align-items: center;
-    color: aliceblue;
-    gap: 1rem;
-    text-decoration: none;
-    margin-bottom: 1rem;
-    font-size: 14px;
-}
-
-.transactions a {
-    text-decoration: none;
-    color: silver;
-}
-
-.transactions .text {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-}
-
-.transactions .bloc1 {
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.alertContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0rem 2rem;
+.transactionContent {
+    display: flex !important;
+    flex-direction: row !important;
     background-color: #13203b;
+    color: silver;
+    height: 100vh;
 }
 
-.alertContent h6 {
-    font-size: 1.2rem;
-}
-
-.alertContent .search {
+.transactionContent .alertContent .btns {
+    display: flex;
+    margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
-.transfert {
-    flex: 1;
+.transactionContent .col-sm-2 {
+    margin-top: 54px !important;
 }
 
-.transactions .alertContent input {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+.transactionContent .alertContent button {
+    border-radius: 5px;
+    padding: .65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #0f1a32;
+    cursor: pointer;
+    width: auto !important;
+}
+
+.btns .col-sm-9 {
+    display: flex !important;
+    gap: 1rem;
+}
+
+.btns .col-sm-3 button {
+    float: right;
+}
+
+.transactionContent .alertContent h6 {
+    margin-top: 1rem;
+}
+
+.transactionContent .alertContent .search {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.transactionContent .alertContent .search input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
     padding: .65rem;
     font-size: 14px;
     outline: none;
     border: 1px solid #3a4a69;
     color: silver;
     background-color: #13203b;
-    width: 100%;
 }
 
-.transfertBtn {
-    padding: .65rem;
-    font-size: 14px;
-    outline: none;
-    border: 1px solid #3a4a69;
-    color: silver;
-    background-color: #0f1a32;
-    display: flex;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    align-items: center;
-    gap: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
+.transactionContent .content {
+    padding-right: 1rem;
 }
 
-.alertContent .search button {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: .65rem;
-    font-size: 14px;
-    outline: none;
+table {
     border: 1px solid #3a4a69;
+}
+
+.transactionContent a {
+    text-decoration: none !important;
     color: silver;
-    background-color: #0f1a32;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    cursor: pointer;
 }
