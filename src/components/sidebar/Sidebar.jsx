@@ -103,7 +103,7 @@ const Sidebar = () => {
               {
                 heureActuelle && parseInt(heureActuelle) >= 6 && parseInt(heureActuelle) < 16 ? "Bonjour " :
                   heureActuelle && parseInt(heureActuelle) >= 16 && parseInt(heureActuelle) < 20 ? "Bonsoir " :
-                    heureActuelle && parseInt(heureActuelle) >= 20 && parseInt(heureActuelle) < 6 ? "Bonne nuit " : ""
+                    heureActuelle && parseInt(heureActuelle) >= 20 || parseInt(heureActuelle) < 6 ? "Bonne nuit " : ""
               } {userData && userData.pseudo}
             </NavLink>
           </div>

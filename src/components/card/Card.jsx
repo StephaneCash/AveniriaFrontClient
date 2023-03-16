@@ -88,7 +88,7 @@ function Card() {
     return (
         <div className='cards'>
 
-            <div className='card' style={{ width: 320, padding: "0 3rem" }}>
+            <div className='card' style={{ width: 300, padding: "0 3rem" }}>
                 <div>Solde</div>
                 <div className='cardChilds'>
                     {
@@ -146,7 +146,7 @@ function Card() {
 
             <div className='card'>
                 <span>Vos activités</span>
-                <Chart options={options} series={series} type="bar" width={400} height={300} />
+                <Chart options={options} series={series} type="bar" width={350} height={300} />
             </div>
         </div >
     )

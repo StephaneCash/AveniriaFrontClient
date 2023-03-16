@@ -12,11 +12,11 @@
     background-color: #0e172a;
     display: grid;
     border-radius: 5px;
-    gap: 1.5rem;
+    gap: .5rem;
     height: 100%;
     width: 100%;
     overflow: hidden;
-    grid-template-columns: 12rem 61rem 20rem;
+    grid-template-columns: 12rem auto 17rem;
 }
 
 .dashboard {
