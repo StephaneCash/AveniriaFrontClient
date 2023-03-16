@@ -1,7 +1,8 @@
 .createTransaction {
     color: silver !important;
     overflow: auto;
-    padding: 0 2rem;
+    padding-right: 2rem;
+    padding-left: 0;
     font-family: 'Roboto';
 }
 
