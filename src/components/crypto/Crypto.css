@@ -10,12 +10,17 @@
     color: silver;
 }
 
+.dataCrypto .col-sm-2,
+.dataCrypto .col-sm-10 {
+    margin-top: 70px !important;
+}
+
 .crypto .mainCrypto {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 60vh;
 }
 
 .crypto .mainCrypto button {

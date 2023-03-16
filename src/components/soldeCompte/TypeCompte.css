@@ -2,6 +2,8 @@
     padding: 1rem;
     font-family: "Roboto";
     overflow-y: auto;
+    margin-top: 20px;
+    margin-right: 2rem;
 }
 
 .typeCompte {
