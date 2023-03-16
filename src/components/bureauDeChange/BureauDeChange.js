@@ -92,7 +92,7 @@ const BureauDeChange = () => {
         setConfirm(false);
     }, [montant]);
 
-     useEffect(() => {
+    useEffect(() => {
         setConfirm(false);
     }, [devise, deviseDe]);
 
@@ -105,7 +105,7 @@ const BureauDeChange = () => {
                 <div className='bureau'>
                     <div className='mainBureau'>
                         <h1>Convertir votre argent <FaExchangeAlt /> </h1>
-                        <div style={{ background: "silver", padding: "1rem", color: "#444", width: "160px", maxWidth: "auto" }}>
+                        <div style={{ background: "silver", padding: "1rem", color: "#444", width: "160px", maxWidth: "auto", borderRadius: "5px" }}>
                             Votre solde :
                             {
                                 compteUser && compteUser.devises.map((val, i) => {
@@ -156,7 +156,7 @@ const BureauDeChange = () => {
                         <div className='montant'>
                             <div>
                                 <div className='affichage'>
-                                    { montant + " "}
+                                    {montant + " "}
                                     {
                                         devise === "Dollar" ? "Dollars américains " : devise === "Euro" ? " Euros " :
                                             devise === "CDF" ? "Franc Congolais " : ''}
