@@ -16,7 +16,7 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-    grid-template-columns: 12rem auto 17rem;
+    grid-template-columns: 12% 70% 17%;
 }
 
 .dashboard {
@@ -39,6 +39,10 @@
 
 .dashboard .cards{
     display: flex;
+}
+
+.dashboard .cards .card{
+    width: 50% !important;
 }
 
 .dashbaordMain .compteConf{
