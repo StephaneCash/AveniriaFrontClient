@@ -1,13 +1,16 @@
 .rightside {
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 
 .rightside h3 {
-    color: #fff;
-    margin-left: 2rem;
+    color: silver;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -23,7 +26,7 @@
         margin-top: 0;
     }
 
-    .rightside>div{
+    .rightside>div {
         display: flex;
         flex-direction: column;
         align-items: center;

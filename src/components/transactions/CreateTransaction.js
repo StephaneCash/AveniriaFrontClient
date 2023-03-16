@@ -13,12 +13,13 @@ const CreateTransaction = () => {
     const { compteUser } = useContext(UserContext);
 
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
-
-                <div className='createTransaction'>
+            <div className='transactionContent'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
+                <div className='col-sm-10 createTransaction' style={{ marginTop: "70px" }}>
                     {
                         compteUser && compteUser.isValid === false ?
                             (
@@ -34,14 +35,14 @@ const CreateTransaction = () => {
                                 </div>
                             ) : (
                                 <Paper variant='outlined' sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}
-                                    style={{ backgroundColor: "#13203b", color: "aliceblue" }}>
+                                    style={{ backgroundColor: "#13203b", color: "aliceblue", border: "1px solid #3a4a69" }}>
                                     <FormStepper />
                                 </Paper>
                             )
                     }
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

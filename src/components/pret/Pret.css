@@ -1,8 +1,102 @@
 .pret,
 .mainPret {
-    padding: 1rem 2rem;
+    padding: 1rem 0rem;
     overflow: auto;
     font-family: "Roboto";
+}
+
+.avantPret {
+    display: flex !important;
+    background-color: #13203b !important;
+    height: 100vh;
+    min-height: auto;
+    color: silver !important;
+}
+
+.avantPret .col-sm-2 {
+    margin-top: 70px !important;
+}
+
+.pret select {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: .4rem;
+    border-radius: 5px;
+    padding: .65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #13203b;
+}
+
+.pretsMoney {
+    display: flex !important;
+    background-color: #13203b !important;
+    height: 100vh;
+    min-height: auto;
+    color: silver !important;
+}
+
+.pretsMoney .bloc1 {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pretsMoney .bloc1 .transfert {
+    flex: 1;
+}
+
+.pretsMoney .bloc1 .transfert button {
+    border-radius: 5px;
+    padding: 0.65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #0f1a32;
+    cursor: pointer;
+    float: right;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: auto !important;
+}
+
+.pretsMoney .retour {
+    text-decoration: none;
+    color: silver;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pretsMoney .alertContent {
+    margin-bottom: 2rem;
+}
+
+.pretsMoney .alertContent .search input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0.65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #13203b;
+}
+
+.pretsMoney .col-sm-2,
+.pret .col-sm-2 {
+    margin-top: 70px !important;
+}
+
+.pretsMoney .col-sm-10 {
+    margin-top: 70px !important;
+    color: silver !important;
+    padding-right: 1rem !important;
 }
 
 .pret h3 {
@@ -21,7 +115,10 @@
     justify-content: center;
     margin-top: 2rem;
     align-items: center;
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 0;
+    padding-right: 1rem;
     gap: 4rem;
     background-color: #13203b;
     border-radius: 5px;
@@ -30,7 +127,10 @@
 .pret .formulaire {
     background-color: #13203b;
     border-radius: 5px;
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 1.5rem;
+    padding-left: 0;
 }
 
 .pret .pretPersonnel h1 {
@@ -63,6 +163,10 @@
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+.pret .formulaire .btns button {
+    border: 1px solid silver;
 }
 
 .pret .formulaire h1 {

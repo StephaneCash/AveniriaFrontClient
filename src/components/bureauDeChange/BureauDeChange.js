@@ -97,119 +97,126 @@ const BureauDeChange = () => {
     }, [devise, deviseDe]);
 
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
+            <div className='col-sm-12 bureaudechange'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
 
-                <div className='bureau'>
-                    <div className='mainBureau'>
-                        <h1>Convertir votre argent <FaExchangeAlt /> </h1>
-                        <div style={{ background: "silver", padding: "1rem", color: "#444", width: "160px", maxWidth: "auto", borderRadius: "5px" }}>
-                            Votre solde :
+                <div className='col-sm-10 dataMain'>
+                    <div className='bureau'>
+                        <div className='mainBureau'>
+                            <h1>Convertir votre argent <FaExchangeAlt /> </h1>
                             {
-                                compteUser && compteUser.devises.map((val, i) => {
-                                    if (val.devise === devise) {
-                                        return " " + val.montant + " " + val.devise
+                                devise &&
+                                <div style={{ background: "silver", padding: "1rem", color: "#444", width: "200px", maxWidth: "auto", borderRadius: "5px" }}>
+                                    Votre solde :
+                                    {
+                                        compteUser && compteUser.devises.map((val, i) => {
+                                            if (val.devise === devise) {
+                                                return " " + val.montant + " " + val.devise
+                                            }
+                                        })
                                     }
-                                })
+                                </div>
                             }
-                        </div>
 
-                        <div className='form'>
-                            <div>
-                                <label>Choisir la devise</label>
-                                <div className='flag'>
-                                    <Flag />
-                                    <span>{devise}</span>
+                            <div className='form'>
+                                <div>
+                                    <label>Choisir la devise</label>
+                                    <div className='flag'>
+                                        <Flag />
+                                        <span>{devise}</span>
+                                    </div>
+                                    <select onChange={(e) => setDevise(e.target.value)}>
+                                        <option value="" key="">-- Choisir la devise -- </option>
+                                        {
+                                            compteUser && compteUser.devises.map((value, i) => {
+                                                return <option value={value.devise} key={i}>
+                                                    {value.devise}
+                                                </option>
+                                            })
+                                        }
+                                    </select>
                                 </div>
-                                <select onChange={(e) => setDevise(e.target.value)}>
-                                    <option value="" key="">-- Choisir la devise -- </option>
-                                    {
-                                        compteUser && compteUser.devises.map((value, i) => {
-                                            return <option value={value.devise} key={i}>
-                                                {value.devise}
-                                            </option>
-                                        })
-                                    }
-                                </select>
-                            </div>
-                            <div>
-                                <label>Vers</label>
-                                <div className='flag'>
-                                    <FlagDe />
-                                    <span>{deviseDe}</span>
-                                </div>
-                                <select onChange={(e) => setDeviseDe(e.target.value)}>
-                                    <option value="" key="">-- Vers --</option>
-                                    {
-                                        compteUser && compteUser.devises.map((value, i) => {
-                                            return <option value={value.devise} key={i}>
-                                                {value.devise}
-                                            </option>
-                                        })
-                                    }
-                                </select>
-                            </div>
-                        </div>
-
-                        <div className='montant'>
-                            <div>
-                                <div className='affichage'>
-                                    {montant + " "}
-                                    {
-                                        devise === "Dollar" ? "Dollars américains " : devise === "Euro" ? " Euros " :
-                                            devise === "CDF" ? "Franc Congolais " : ''}
-                                    {
-                                        btnClic && " = "
-                                    }
-                                </div>
-                                <div className='montantF'>
-                                    {
-                                        devise ? sum : <span>La conversion sera affichée ici</span>
-                                    } <br />
-                                    {
-                                        deviseDe === "CDF" ? " Franc Congolais" :
-                                            deviseDe === "Dollar" ? " Dollars américains" :
-                                                deviseDe === "Euro" ? " Euros" : ""
-                                    }
+                                <div>
+                                    <label>Vers</label>
+                                    <div className='flag'>
+                                        <FlagDe />
+                                        <span>{deviseDe}</span>
+                                    </div>
+                                    <select onChange={(e) => setDeviseDe(e.target.value)}>
+                                        <option value="" key="">-- Vers --</option>
+                                        {
+                                            compteUser && compteUser.devises.map((value, i) => {
+                                                return <option value={value.devise} key={i}>
+                                                    {value.devise}
+                                                </option>
+                                            })
+                                        }
+                                    </select>
                                 </div>
                             </div>
 
-                            <div>
-                                <label>Montant</label>
-                                <div className='flag' style={{ marginTop: "1rem" }}>
-                                    <FaGlobe size={40} />
-                                    <span>{devise}</span>
+                            <div className='montant'>
+                                <div>
+                                    <div className='affichage'>
+                                        {montant + " "}
+                                        {
+                                            devise === "Dollar" ? "Dollars américains " : devise === "Euro" ? " Euros " :
+                                                devise === "CDF" ? "Franc Congolais " : ''}
+                                        {
+                                            btnClic && " = "
+                                        }
+                                    </div>
+                                    <div className='montantF'>
+                                        {
+                                            devise ? sum : <span>La conversion sera affichée ici</span>
+                                        } <br />
+                                        {
+                                            deviseDe === "CDF" ? " Franc Congolais" :
+                                                deviseDe === "Dollar" ? " Dollars américains" :
+                                                    deviseDe === "Euro" ? " Euros" : ""
+                                        }
+                                    </div>
                                 </div>
-                                <input
-                                    type="number"
-                                    placeholder='Montant'
-                                    onChange={(e) => setMontant(e.target.value)}
-                                />
+
+                                <div>
+                                    <label>Montant</label>
+                                    <div className='flag' style={{ marginTop: "1rem" }}>
+                                        <FaGlobe size={40} />
+                                        <span>{devise}</span>
+                                    </div>
+                                    <input
+                                        type="number"
+                                        placeholder='Montant'
+                                        onChange={(e) => setMontant(e.target.value)}
+                                    />
+                                </div>
+
                             </div>
 
-                        </div>
-
-                        <div className='button'>
-                            {
-                                confirm ? (
-                                    <button onClick={handleConfirmConvert}>
-                                        Confirmer votre conversion
-                                    </button>
-                                ) :
-                                    (
-                                        <button onClick={handleConvert}>
-                                            Convertir
+                            <div className='button'>
+                                {
+                                    confirm ? (
+                                        <button onClick={handleConfirmConvert}>
+                                            Confirmer votre conversion
                                         </button>
-                                    )
-                            }
+                                    ) :
+                                        (
+                                            <button onClick={handleConvert}>
+                                                Convertir
+                                            </button>
+                                        )
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <ToastContainer />
-        </div>
+        </>
     )
 }
 

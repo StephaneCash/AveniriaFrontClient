@@ -61,10 +61,10 @@ const SignIn = () => {
 
                             <input
                                 type="email"
-                                className="form-control"
                                 placeholder='Votre adresse email'
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
+                                className="form-control"
                             />
 
                             <input

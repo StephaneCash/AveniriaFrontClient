@@ -7,7 +7,7 @@ const RightSide = () => {
     return (
         <div className='rightside'>
             <div>
-                <h3>Transactions par Cards</h3>
+                <h3>Transactions par cartes</h3>
                 <Updates />
             </div>
 

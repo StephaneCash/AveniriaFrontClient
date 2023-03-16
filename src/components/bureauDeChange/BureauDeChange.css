@@ -1,27 +1,70 @@
+.bureaudechange {
+   display: flex;
+   height: 100vh;
+   font-family: Roboto, sans-serif;
+   background-color: var(--blueFonce);
+   color: silver !important;
+}
+
+.bureaudechange .col-sm-2 {
+   margin-top: 70px !important;
+}
+
+.bureaudechange .dataMain {
+   padding-right: 1.5rem !important;
+}
+
 .bureau {
    display: flex;
    width: 100% !important;
    flex-direction: column;
-   margin-left: 5rem;
+   border: 1px solid #3a4a69;
+   margin-top: 75px;
+   border-radius: 5px;
 }
 
-.mainBureau h1{
+.bureau input {
+   width: 100%;
+   box-sizing: border-box;
+   border-radius: 5px;
+   padding: .65rem;
+   font-size: 14px;
+   outline: none;
+   border: 1px solid #3a4a69;
+   color: silver;
+   background-color: #13203b;
+}
+
+.mainBureau {
+   margin-top: 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   align-items: center;
+   margin-bottom: 2rem;
+}
+
+.mainBureau h1 {
    font-size: 1.4rem;
    display: flex;
    align-items: center;
    gap: 2rem;
    font-weight: 200;
-   margin-bottom: 3rem;
+   margin-bottom: 1.5rem;
+   justify-content: center !important;
+   align-items: center !important;
 }
 
 .mainBureau .form {
-   width: 90% !important;
+   width: 100% !important;
    padding: 0 !important;
    display: flex;
    flex-direction: row;
    align-items: center;
    margin-top: 2rem;
    margin-left: 0;
+   justify-content: center !important;
+   align-items: center !important;
    border: 0;
    box-shadow: none !important;
 }
@@ -31,8 +74,7 @@
    margin-top: 1rem;
 }
 
-
-.form .flag{
+.form .flag {
    display: flex;
    align-items: center;
    margin-top: 1rem;
@@ -43,16 +85,31 @@
 }
 
 .mainBureau .montant {
-   width: 90% !important;
-   margin-top: 2rem;
+   width: 100% !important;
+   margin-top: 1rem;
    display: flex;
    flex-direction: row;
    align-items: center;
+   justify-content: center;
    gap: 2rem;
 }
 
-.flag span{
+.flag span {
    margin-left: 1rem;
+}
+
+.bureau select {
+   margin-right: 2rem;
+   width: 100%;
+   box-sizing: border-box;
+   margin-bottom: .4rem;
+   border-radius: 5px;
+   padding: .65rem;
+   font-size: 14px;
+   outline: none;
+   border: 1px solid #3a4a69;
+   color: silver;
+   background-color: #13203b;
 }
 
 .mainBureau .montant input {
@@ -67,7 +124,7 @@
    width: 300px !important;
 }
 
-.bureau .button button{
+.bureau .button button {
    padding: 1rem;
    background-color: #242f49;
    color: silver;
@@ -76,5 +133,5 @@
    cursor: pointer;
    border-radius: 5px;
    width: 200px;
-   margin-top: 5rem;
+   margin-top: 3rem;
 }

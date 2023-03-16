@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { FaArrowLeft, FaRegFrownOpen } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import AppContext, { UserContext } from '../../AppContext';
+import { UserContext } from '../../AppContext';
 import { baseUrl } from '../../bases/baseUrl';
 import Navbar from '../navbar/Navbar';
 import Sidebar from '../sidebar/Sidebar';
@@ -38,61 +38,60 @@ const CreateCard = () => {
 
     return (
         <>
-            <div className='compteCustom'>
-                <Navbar />
-                <div className='compte'>
+            <Navbar />
+            <div className='col-sm-12 createCartesV'>
+                <div className='col-sm-2'>
                     <Sidebar />
-                    <div className='createMain'>
-                        <Link to="/compte/cards">
-                            <FaArrowLeft /> Retour
-                        </Link>
+                </div>
+                <div className='col-sm-10 createMain'>
+                    <Link to="/compte/cards">
+                        <FaArrowLeft /> Retour
+                    </Link>
 
-                        {
-                            compteUser && compteUser.isValid === true ? (
-                                <>
-                                    <h3>Créer une carte</h3>
+                    {
+                        compteUser && compteUser.isValid === true ? (
+                            <>
+                                <h3>Créer une carte virtuelle</h3>
 
-                                    <form>
-                                        <select onChange={(e) => setType(e.target.value)}>
-                                            <option value="" key="">--Choisir le type de carte--</option>
-                                            <option value="Visa" key="">
-                                                VISA
-                                            </option>
-                                            <option value="MasterCard" key="">MASTERCARD</option>
-                                        </select>
+                                <form>
+                                    <select onChange={(e) => setType(e.target.value)}>
+                                        <option value="" key="">--Choisir le type de carte--</option>
+                                        <option value="Visa" key="">
+                                            VISA
+                                        </option>
+                                        <option value="MasterCard" key="">MASTERCARD</option>
+                                    </select>
 
-                                        <select onChange={(e) => setDevise(e.target.value)}>
-                                            <option value="" key="">--Choisir la devise--</option>
-                                            <option value="Usd" key="">USD</option>
-                                            <option value="Euro" key="">EURO</option>
-                                        </select>
-                                    </form>
+                                    <select onChange={(e) => setDevise(e.target.value)}>
+                                        <option value="" key="">--Choisir la devise--</option>
+                                        <option value="Usd" key="">USD</option>
+                                        <option value="Euro" key="">EURO</option>
+                                    </select>
+                                </form>
 
-                                    <div className='button'>
-                                        <button onClick={createCardVirtual}>
-                                            {btnClic ? (
-                                                <i className='fa fa-spinner fa-pulse'></i>
-                                            ) : "Créer"}
-                                        </button>
-                                    </div>
-                                </>
-                            ) :
-                                <div className='cardSC configCompte'>
-                                    <FaRegFrownOpen size={25} style={{ marginBottom: "1rem" }} />
-                                    Votre compte n'est pas configuré veuillez le configurer ici
-                                    <br />
-                                    <Link to="/compte/config/compte-user">
-                                        <button type='button'>
-                                            Configurer votre compte
-                                        </button>
-                                    </Link>
+                                <div className='button'>
+                                    <button onClick={createCardVirtual}>
+                                        {btnClic ? (
+                                            <i className='fa fa-spinner fa-pulse'></i>
+                                        ) : "Créer"}
+                                    </button>
                                 </div>
-                        }
+                            </>
+                        ) :
+                            <div className='cardSC configCompte'>
+                                <FaRegFrownOpen size={25} style={{ marginBottom: "1rem" }} />
+                                Votre compte n'est pas configuré veuillez le configurer ici
+                                <br />
+                                <Link to="/compte/config/compte-user">
+                                    <button type='button'>
+                                        Configurer votre compte
+                                    </button>
+                                </Link>
+                            </div>
+                    }
 
-                    </div>
                 </div>
             </div>
-
             <ToastContainer />
         </>
     )

@@ -1,23 +1,31 @@
 .mainSoldeCompte {
     font-family: "Roboto", sans-serif;
     background-color: var(--blueFonce);
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: flex-start !important;
     flex-direction: column;
-    color: silver;
     overflow-y: auto;
 }
 
+
 .contentSoldeCompte {
     background-color: #0e172a;
-    display: grid;
-    height: 100%;
+    display: flex;
+    height: 100vh;
     width: 100%;
     border-radius: 5px;
     gap: 1rem;
     overflow: hidden;
+    color: silver;
     grid-template-columns: 12rem auto;
+}
+
+
+
+.configSolde{
+    width: 100%;
+    margin-top: 70px;
 }
 
 .contentCompte {
@@ -57,6 +65,10 @@
     cursor: pointer;
     padding: .4rem;
     margin-bottom: 2rem;
+    border: 1px solid silver;
+    font-size: 14px;
+    background-color: #2e3d5c;
+    color: silver;
 }
 
 .configSolde .devises {
@@ -70,14 +82,16 @@
 }
 
 .configSolde .card {
-    border: 1px solid #304061;
-    border-radius: 4px;
-    cursor: pointer;
+    border: 1px solid #304061 !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    padding: 1rem !important;
+    background-color: #0e172a !important;
 }
 
 .configSolde .card.actived {
-    background-color: #13203b;
-    border: 1px solid #182239;
+    background-color: #2e3d5c !important;
+    border: 1px solid #182239 !important;
 }
 
 .contentCompte h4 {
@@ -137,10 +151,11 @@
 .grilleEpargne .card {
     border: 1px solid #182239;
     padding: 1rem;
+    background-color: #0e172a !important;
 }
 
 .grilleEpargne .card.actived {
-    background-color: #13203b;
+    background-color: #13203b !important;
 }
 
 .grilleEpargne .card .list {
@@ -163,4 +178,8 @@
     cursor: pointer;
     padding: .4rem;
     margin-bottom: 2rem;
+    border: 1px solid silver;
+    font-size: 14px;
+    background-color: #2e3d5c;
+    color: silver;
 }

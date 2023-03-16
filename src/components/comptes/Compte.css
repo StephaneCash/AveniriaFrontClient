@@ -1,22 +1,13 @@
-.compteCustom {
+.ccompteUser {
     font-family: Roboto, sans-serif;
     background-color: var(--blueFonce);
-    height: 100vh;
+    height: auto;
     display: flex;
-    justify-content: flex-start !important;
-    flex-direction: column;
     color: silver;
 }
 
-.compte {
-    background-color: #0e172a;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    gap: 1rem;
-    overflow: hidden;
-    grid-template-columns: 12rem auto;
+.ccompteUser .col-sm-2 {
+    margin-top: 70px !important;
 }
 
 .mainCompte {
@@ -28,6 +19,7 @@
 .mainCompte .toolbar {
     display: flex;
     align-items: center;
+    margin-top: 4rem;
     gap: 1rem;
     padding: 1rem 2rem;
     border-bottom: 1px solid #13203b;
@@ -78,41 +70,48 @@
     cursor: pointer;
 }
 
-.compte .mainCompte .detailUser .activePDetail {
+.mainCompte .detailUser h4 {
+    font-size: 15px;
+}
+
+.mainCompte .detailUser .activePDetail {
     border-bottom: 1px solid silver;
     padding-bottom: .4rem;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
-.compte .form,
-.compte .formPaiement,
-.compte .formSecurite,
-.compte .auth {
+.mainCompte .form,
+.mainCompte .formPaiement,
+.mainCompte .formSecurite,
+.mainCompte .auth {
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
     padding-left: 2rem;
     margin-right: 2rem;
     border-radius: 4px;
-    border-top: 1px solid #1f3457;
+    border-top: 1px solid #5f6b80;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-.compte .form .contentForm,
-.compte .formPaiement .contentForm {
+.mainCompte .form .contentForm,
+.mainCompte .formPaiement .contentForm {
     display: flex;
     gap: 1rem;
     margin-bottom: .8rem;
+    margin-top: 1rem;
 }
 
-.compte .form .contentForm label,
+.mainCompte .form .contentForm label,
 .formPaiement label {
     width: 25%;
+    font-size: 14px;
 }
 
-.compte  input,
-.compte  input,
-.compte input {
+.mainCompte input,
+.mainCompte input,
+.mainCompte input {
     flex: 1;
     margin-right: 2rem;
     width: 100%;
@@ -127,8 +126,8 @@
     background-color: #13203b;
 }
 
-.compte textarea,
-.compte select {
+.mainCompte textarea,
+.mainCompte select {
     flex: 1;
     margin-right: 2rem;
     width: 100%;
@@ -143,19 +142,19 @@
     background-color: #13203b;
 }
 
-.compte .form .contentForm input::placeholder {
+.mainCompte .form .contentForm input::placeholder {
     color: rgb(121, 117, 117);
     background-color: #13203b;
 }
 
-.compte .form .button,
+.mainCompte .form .button,
 .formPaiement .button {
     width: 100%;
     display: flex;
     justify-content: flex-end;
 }
 
-.compte .form .button button,
+.mainCompte .form .button button,
 .formPaiement .button button,
 .formSecurite .col1 .button button,
 .formSecurite .col2 .button button {
@@ -177,9 +176,11 @@
 .auth h4 {
     border-bottom: 1px solid #253049;
     padding-bottom: 1rem;
+    font-size: 15px;
+    margin-top: 1rem;
 }
 
-.compte .formSecurite {
+.mainCompte .formSecurite {
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -188,8 +189,8 @@
     padding-bottom: 2rem;
 }
 
-.compte .formSecurite .col1,
-.compte .formSecurite .col2 {
+.mainCompte .formSecurite .col1,
+.mainCompte .formSecurite .col2 {
     padding-left: 2rem;
     border-radius: 4px;
     padding-right: 2rem;
@@ -204,26 +205,26 @@
     margin-bottom: 2rem;
 }
 
-.compte .auth {
+.mainCompte .auth {
     margin-top: 1rem;
     padding-bottom: 1rem
 }
 
-.compte .auth .grille {
+.mainCompte .auth .grille {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     gap: 1rem;
 }
 
-.compte .auth .card h5 {
+.mainCompte .auth .card h5 {
     margin: 0;
     font-size: 1.4rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.compte .auth .card {
-    border: 1px solid #3a4a69;
+.mainCompte .auth .card {
+    border: 1px solid #3a4a69 !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -231,14 +232,15 @@
     padding: 1rem;
     font-size: 14px;
     cursor: pointer;
+    background-color: #0a182e;
     transition: all 0.6s ease;
 }
 
-.compte .auth .card:hover {
+.mainCompte .auth .card:hover {
     border: 1px solid #748ec2;
 }
 
-.compte .auth .card.activeCard {
+.mainCompte .auth .card.activeCard {
     background-color: #13203b;
     border: 1px solid #748ec2;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;

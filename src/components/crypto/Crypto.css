@@ -1,7 +1,13 @@
 .crypto {
-    padding: 0rem 2rem;
     overflow: auto;
     font-family: 'Roboto';
+}
+
+.dataCrypto {
+    display: flex;
+    height: 100vh;
+    background-color: #13203b;
+    color: silver;
 }
 
 .crypto .mainCrypto {

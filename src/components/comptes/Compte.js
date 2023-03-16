@@ -6,13 +6,17 @@ import MainCompte from './MainCompte';
 
 const Compte = () => {
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
-                <MainCompte />
+            <div className='col-sm-12 ccompteUser'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
+                <div className='col-sm-10'>
+                    <MainCompte />
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

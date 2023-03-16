@@ -3,6 +3,18 @@
     font-family: "Roboto";
 }
 
+.affiliationContent {
+    display: flex;
+    background-color: #13203b;
+    height: 100vh;
+    color: silver;
+}
+
+.affiliationContent .col-sm-2,
+.affiliationContent .col-sm-10 {
+    margin-top: 70px !important;
+}
+
 .affiliations .data {
     display: flex;
     align-items: center;
