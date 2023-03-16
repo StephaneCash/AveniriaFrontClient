@@ -8,6 +8,10 @@
     overflow-y: auto;
 }
 
+.contentSoldeCompte .col-sm-2,
+.contentSoldeCompte .col-sm-10 {
+    margin-top: 70px !important;
+}
 
 .contentSoldeCompte {
     background-color: #0e172a;
@@ -23,7 +27,7 @@
 
 
 
-.configSolde{
+.configSolde {
     width: 100%;
     margin-top: 70px;
 }
