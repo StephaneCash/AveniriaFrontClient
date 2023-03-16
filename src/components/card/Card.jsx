@@ -146,7 +146,7 @@ function Card() {
 
             <div className='card'>
                 <span>Vos activités</span>
-                <Chart options={options} series={series} type="bar" width={300} height={300} />
+                <Chart options={options} series={series} type="bar" width={500} height={300} />
             </div>
         </div >
     )
