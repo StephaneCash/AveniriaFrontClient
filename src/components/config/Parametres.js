@@ -6,15 +6,17 @@ import "./Parametres.css"
 const Parametres = () => {
 
     return (
-        <div className='compteCustom'>
+        <>
             <Navbar />
-            <div className='compte'>
-                <Sidebar />
-                <div className='mainParametre'>
+            <div className='col-sm-12 configuration'>
+                <div className='col-sm-2'>
+                    <Sidebar />
+                </div>
+                <div className='col-sm-10 parametres'>
                     Paramètres
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

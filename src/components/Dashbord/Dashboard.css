@@ -3,7 +3,8 @@
     background-color: var(--blueFonce);
     color: silver;
     display: flex;
-    height: auto;
+    height: 100vh;
+    overflow: auto;
 }
 
 .appDash .col-sm-2 {

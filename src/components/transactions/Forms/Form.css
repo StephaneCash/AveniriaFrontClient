@@ -218,10 +218,36 @@
     background-color: #13203b;
 }
 
-.form5{
+.form5 {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.form5 .formulaire input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: .4rem;
+    border-radius: 5px;
+    padding: .65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #13203b;
+}
+
+.form5 .formulaire textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: .4rem;
+    border-radius: 5px;
+    padding: .65rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #3a4a69;
+    color: silver;
+    background-color: #13203b;
 }
