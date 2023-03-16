@@ -16,13 +16,13 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-    grid-template-columns: 12% auto 18%;
+    grid-template-columns: 12rem auto 18rem;
 }
 
 .dashboard {
     display: flex;
     flex-direction: column;
-    padding: 2rem 2rem;
+    padding: 2rem 1rem;
     position: relative;
     height: auto;
     overflow-y: auto;
@@ -37,19 +37,19 @@
     color: whitesmoke;
 }
 
-.dashboard .cards {
+.dashboard .cards{
     display: flex;
 }
 
-.dashboard .cards .card {
-    width: auto !important;
+.dashboard .cards .card:first-child{
+    width: 320px !important;
 }
 
-.dashboard .cards .soldes {
-    width: 300px !important;
+.dashboard .cards .card{
+    width: 50% !important;
 }
 
-.dashbaordMain .compteConf {
+.dashbaordMain .compteConf{
     display: flex;
     flex-direction: column;
     gap: 1rem;
