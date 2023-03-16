@@ -60,7 +60,9 @@
 
 .login .form-control {
     border-radius: 5px;
+    padding: .5rem;
     width: 100% !important;
+    font-size: 14px !important;
 }
 
 .login .form .button {

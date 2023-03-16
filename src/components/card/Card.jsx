@@ -92,7 +92,7 @@ function Card() {
                     <div>Solde</div>
                     <div className='cardChilds'>
                         {
-                            compteUser ? compteUser.devises.map((devise, i) => {
+                            compteUser && compteUser.devises.length > 0 ? compteUser.devises.map((devise, i) => {
                                 return (
                                     <div className='cardMin' key={devise._id}>
                                         {
@@ -151,7 +151,11 @@ function Card() {
             <div className='col-sm-6'>
                 <div className='card'>
                     <span>Vos activités</span>
-                    <Chart options={options} series={series} type="bar" width={320} height={300} />
+                    {
+                        compteUser && compteUser.devises && compteUser.devises.length > 0 ?
+                            <Chart options={options} series={series} type="bar" width={320} height={300} />
+                            : <Laoder />
+                    }
                 </div>
             </div>
         </div >
