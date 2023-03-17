@@ -20,9 +20,11 @@ const Form5 = () => {
     };
 
     const handleScan = (res) => {
-        if (res) {
+        console.log(res, 'hjhjhj')
+        if (res && res.length === 13) {
+            console.log("TROUUVE")
             setResult(true);
-            axios.get(baseUrl + "/comptes/getCompteByNum/" + res)
+            axios.get(`${baseUrl}/comptes/getCompteByNum/${res}`)
                 .then(resp => {
                     setDataUser(resp.data);
                 })
@@ -49,8 +51,9 @@ const Form5 = () => {
                 nomUserTransfere: dataUser && dataUser.user && dataUser.user.pseudo,
                 compteIdDest: dataUser && dataUser.compte && dataUser.compte._id
             })
-                .then(() => {
+                .then((d) => {
                     toast.success('Transaction effectuée avec succès');
+                    console.log(d)
                     setTimeout(() => {
                         window.location.href = "/compte/transactions"
                     }, 3000);
