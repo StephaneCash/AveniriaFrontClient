@@ -11,7 +11,7 @@ const SignIn = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState('');
-    const [tokenGoogle, setTokenGoogle] = useState("jkk");
+    const [tokenGoogle, setTokenGoogle] = useState("");
 
     const [btnClic, setBtnClic] = useState(false);
 
