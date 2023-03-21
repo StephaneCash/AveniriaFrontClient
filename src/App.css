@@ -21,6 +21,7 @@ button {
   font-family: "Roboto", sans-serif;
   background-color: var(--blueFonce);
   height: 100vh;
+  max-height: auto;
   display: flex;
   justify-content: center;
   color: #fff;

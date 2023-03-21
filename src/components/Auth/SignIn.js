@@ -53,29 +53,30 @@ const SignIn = () => {
             <div className='app'>
                 <div className='login'>
                     <div className='form'>
-                        <div className='content'>
+                        <form>
                             <div className='logoInnoverce'>
                                 <img src={logo} alt='Logo' />
                             </div>
                             <h3>Se connecter</h3>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email"
+                                    className="form-control"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={email}
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
 
-                            <input
-                                type="email"
-                                placeholder='Votre adresse email'
-                                onChange={(e) => setEmail(e.target.value)}
-                                value={email}
-                                className="form-control"
-                            />
-
-                            <input
-                                type="password"
-                                className="form-control"
-                                placeholder='Créer un mot de passe'
-                                onChange={(e) => setPassword(e.target.value)} value={password}
-                            />
-                            <br />
-                            <div className='content'>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password"
+                                    className="form-control" onChange={(e) => setPassword(e.target.value)} value={password}
+                                    id="exampleInputPassword1" placeholder="Password" />
+                            </div>
+                            <div class="form-group">
                                 <ReCAPTCHA
+                                    size={100}
+                                    color="red"
                                     sitekey="6LfaKTAkAAAAAFTPzhWyXNNBdEu32lulv8lYi7Q6"
                                     onChange={onChange}
                                 />
@@ -96,7 +97,8 @@ const SignIn = () => {
                                 <br /><br />
                                 <Link to="/inscription">Créer un compte ici</Link>
                             </p>
-                        </div>
+                        </form>
+
                     </div>
                 </div>
             </div>

@@ -1,6 +1,29 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useContext, useState } from 'react'
+import { UserContext } from '../../AppContext';
+import { baseUrl } from '../../bases/baseUrl';
 
 function InfosPassWord() {
+
+    const [ancienPin, setAncienPin] = useState('');
+    const [nouvPin, setNouvPin] = useState('');
+    const [pinRepet, setPinRepet] = useState('');
+
+    const { userData } = useContext(UserContext);
+
+    const addOrUpdatePinUser = () => {
+        axios.post(`${baseUrl}/passwords_user_transactions`, {
+            password: nouvPin,
+            idUser: userData._id
+        })
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
     return (
         <div className='formSecurite'>
             <div className='col1'>
@@ -13,12 +36,12 @@ function InfosPassWord() {
                 <input
                     type="password"
                     className="Prénom"
-                    placeholder='Ancien mot de passe'
+                    placeholder='Nouveau mot de passe'
                 />
                 <input
                     type="password"
                     className="Prénom"
-                    placeholder='Ancien mot de passe'
+                    placeholder='Répéter mot de passe'
                 />
                 <div className='button'>
                     <button>Modifier le mot de passe</button>
@@ -29,19 +52,25 @@ function InfosPassWord() {
                 <input
                     type="password"
                     className="Prénom"
-                    placeholder='Ancien mot de passe'
+                    placeholder='Ancien PIN'
+                    onChange={(e) => setAncienPin(e.target.value)}
                 />
                 <input
                     type="password"
                     className="Prénom"
-                    placeholder='Ancien mot de passe'
+                    placeholder='Nouveau PIN'
+                    onChange={(e) => setNouvPin(e.target.value)}
                 />
                 <input
                     type="password"
                     className="Prénom"
-                    placeholder='Ancien mot de passe'
+                    placeholder='Répéter le nouveau PIN'
+                    onChange={(e) => setPinRepet(e.target.value)}
                 />
-                <div className='button'>
+                <div
+                    className='button'
+                    onClick={() => addOrUpdatePinUser()}
+                >
                     <button>Mettre à jour</button>
                 </div>
             </div>

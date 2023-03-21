@@ -10,6 +10,8 @@ const RoutesPrivate = () => {
 
     if (userConnected) {
         data = decodeToken(userConnected)
+    } else {
+        data = null;
     }
 
     return (

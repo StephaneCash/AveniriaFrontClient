@@ -2,7 +2,6 @@
     height: 50vh;
     display: flex;
     justify-content: center;
-    width: 100%;
     align-items: center;
 }
 
@@ -10,11 +9,9 @@
     color: #fff;
     border: 1px solid #2b3b64;
     border-radius: 6px;
-    padding: 3rem;
     background-color: #0e172a;
     width: 400px;
-    display: flex;
-    justify-content: center;
+    padding: 2rem;
     align-items: center;
     background: url('/public/BewitchedAntiqueAllensbigearedbat-size_restricted.gif');
     flex-direction: column;
@@ -43,6 +40,7 @@
 
 .login input {
     margin-bottom: 1rem;
+    box-shadow: none !important;
 }
 
 .login input:focus {
@@ -60,8 +58,7 @@
 
 .login .form-control {
     border-radius: 5px;
-    padding: .5rem;
-    width: 100% !important;
+    max-width: 100% !important;
     font-size: 14px !important;
 }
 
