@@ -4,7 +4,7 @@ import axios from 'axios';
 import { baseUrl } from '../../../bases/baseUrl';
 import { UserContext } from '../../../AppContext';
 import { toast, ToastContainer } from 'react-toastify';
-import { FaRegFrown, FaRegMehRollingEyes } from 'react-icons/fa';
+import { FaRegFrown } from 'react-icons/fa';
 
 const Form5 = () => {
 
@@ -59,7 +59,8 @@ const Form5 = () => {
                     }, 3000);
                 })
                 .catch(err => {
-                    console.log(err)
+                    console.log(err);
+                    toast.error(err && err.response && err.response.data && err.response.data.message);
                 });
         }
     };
