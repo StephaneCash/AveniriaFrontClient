@@ -4,6 +4,7 @@ import axios from 'axios';
 import { baseUrl } from '../../../bases/baseUrl';
 import { UserContext } from '../../../AppContext';
 import { toast, ToastContainer } from 'react-toastify';
+import { FaRegFrown, FaRegMehRollingEyes } from 'react-icons/fa';
 
 const Form5 = () => {
 
@@ -22,7 +23,6 @@ const Form5 = () => {
     const handleScan = (res) => {
         console.log(res, 'hjhjhj')
         if (res && res.length === 13) {
-            console.log("TROUUVE")
             setResult(true);
             axios.get(`${baseUrl}/comptes/getCompteByNum/${res}`)
                 .then(resp => {
@@ -73,8 +73,10 @@ const Form5 = () => {
                     <p>
                         {
                             `
-                        Compte trouvé : ${dataUser && dataUser.compte && dataUser.compte.numero}  de
-                        ${dataUser && dataUser.user && dataUser.user.pseudo}
+                        Compte trouvé : ${dataUser && dataUser.compte && dataUser.compte.numero ? dataUser && dataUser.compte && dataUser.compte.numero :
+                                'Aucun'
+                            }  de
+                        ${dataUser && dataUser.user && dataUser.user.pseudo ? dataUser.user && dataUser.user.pseudo : "Aucun"}
                         `
                         }
                     </p>
@@ -89,25 +91,48 @@ const Form5 = () => {
                             style={{ width: '40%' }}
                         />
                         : <div className='formulaire'>
-                            <select name="" id="" onChange={(e) => setDevise(e.target.value)}>
-                                <option value="">--Choisir une devise--</option>
-                                {
-                                    dataUser && dataUser.compte && dataUser.compte.devises && dataUser.compte.devises.map(val => {
-                                        return <option value={val.devise}>{val.devise}</option>
-                                    })
-                                }
-                            </select>
-                            <input type="number"
-                                onChange={(e) => setMontant(parseInt(e.target.value))}
-                                placeholder='Entrer un montant'
-                            />
+                            {
+                                dataUser && dataUser.compte && dataUser.compte.numero ?
+                                    (
+                                        <>
+                                            <select name="" id="" onChange={(e) => setDevise(e.target.value)}>
+                                                <option value="">--Choisir une devise--</option>
+                                                {
+                                                    dataUser && dataUser.compte && dataUser.compte.devises && dataUser.compte.devises.map(val => {
+                                                        return <option value={val.devise}>{val.devise}</option>
+                                                    })
+                                                }
+                                            </select>
+                                            <input type="number"
+                                                onChange={(e) => setMontant(parseInt(e.target.value))}
+                                                placeholder='Entrer un montant'
+                                            />
 
-                            <textarea
-                                name="" id=""
-                                cols="20"
-                                onChange={(e) => setMotif(e.target.value)}
-                                rows="7" placeholder='Le motif'></textarea>
-                            <button onClick={submitData}>Envoyer</button>
+                                            <textarea
+                                                name="" id=""
+                                                cols="20"
+                                                onChange={(e) => setMotif(e.target.value)}
+                                                rows="7" placeholder='Le motif'></textarea>
+                                            <button onClick={submitData}>Envoyer</button>
+                                        </>
+                                    )
+                                    : (
+                                        <div style={{
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            justifyContent: "center",
+                                            alignItems: "center"
+                                        }}>
+                                            <FaRegFrown size={50} color={"#ddd"} />
+                                            Aucun compte trouvé
+                                            <button
+                                                onClick={() => setResult(false)}
+                                            >
+                                                Recommencer
+                                            </button>
+                                        </div>
+                                    )
+                            }
                         </div>
                 }
 
@@ -116,7 +141,7 @@ const Form5 = () => {
             </div>
 
             <ToastContainer />
-        </div>
+        </div >
     )
 }
 
