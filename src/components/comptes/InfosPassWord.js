@@ -15,6 +15,7 @@ function InfosPassWord() {
     const addOrUpdatePinUser = () => {
         if (nouvPin === pinRepet) {
             axios.post(`${baseUrl}/passwords_user_transactions`, {
+                ancienPin: ancienPin,
                 password: nouvPin,
                 idUser: userData._id
             })

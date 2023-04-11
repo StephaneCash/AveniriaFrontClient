@@ -60,13 +60,11 @@ function Card() {
         }
     }, [userId]);
 
-    console.log(compteUser)
-
     return (
         <div className='mainDashboard'>
             <h1>Tableau de bord <span
-                style={{ color: "#6c7fa1", fontSize: "15px" }}>
-                <FaExchangeAlt size={20} color={"#efefef"} />
+                style={{ color: "silver", fontSize: "15px" }}>
+                <FaExchangeAlt size={20} />
                 Compte {compteUser && compteUser.type}</span>
             </h1>
 
