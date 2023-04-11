@@ -7,7 +7,7 @@ import "./Card.css"
 import { useRef } from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../AppContext';
-import { FaCreditCard, FaExchangeAlt, FaToggleOff, FaToggleOn } from 'react-icons/fa';
+import { FaCreditCard, FaExchangeAlt } from 'react-icons/fa';
 import Laoder from '../loader/Loader';
 import invest from "../../images/invest.svg";
 import invest1 from "../../images/invest1.svg";
@@ -105,7 +105,7 @@ function Card() {
                                         }
                                     </div>
                                     <div className='dateLast'>
-                                        Last Date
+                                       {timestampParser(compteUser && compteUser.updatedAt)}
                                     </div>
                                 </div>
                             </div>

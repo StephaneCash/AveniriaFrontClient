@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import { UserContext } from '../../AppContext';
 import { baseUrl } from '../../bases/baseUrl';
 import { toast } from 'react-toastify';
+import { FaCheckCircle } from 'react-icons/fa';
 
 function InfosPassWord() {
 
@@ -20,7 +21,10 @@ function InfosPassWord() {
                 idUser: userData._id
             })
                 .then(res => {
-                    console.log(res)
+                    toast.success(res && res.data && res.data.message);
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 3000);
                 })
                 .catch(err => {
                     console.log(err);
@@ -30,8 +34,6 @@ function InfosPassWord() {
             toast.error("Les deux mots de passe ne correspondent pas");
         }
     };
-
-    console.log(passTransaction, " PIN USER")
 
     return (
         <div className='formSecurite'>
@@ -57,7 +59,18 @@ function InfosPassWord() {
                 </div>
             </div>
             <div className='col2'>
-                <h4>Modifier le Code Pin</h4>
+                <h4>
+                    {
+                        passTransaction && passTransaction.data && passTransaction.data.isChange === false ? "Votre code PIN n'est pas modifié, veuillez le modifier." :
+                            <div style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "10px"
+                            }}>
+                                PIN modifié
+                                <FaCheckCircle color={"green"} />
+                            </div>}
+                </h4>
                 <input
                     type="password"
                     className="Prénom"

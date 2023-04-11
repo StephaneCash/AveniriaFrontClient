@@ -19,6 +19,11 @@
     height: 80vh;
     border-left: 1px solid #182e55;
     border-radius: 5px;
+    gap: 1rem;
+}
+
+.appDash .compteConf button{
+    padding: .6rem;
 }
 
 .dashboard {

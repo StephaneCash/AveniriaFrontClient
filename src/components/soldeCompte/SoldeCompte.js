@@ -68,7 +68,7 @@ const SoldeCompte = () => {
             }
         }
         let btn = document.getElementById('btnValid')
-        btn.innerHTML = "Validation...";
+        btn.innerHTML = "...";
 
         axios.post(baseUrl + "/comptes/config", {
             compteId: compteUser && compteUser._id,

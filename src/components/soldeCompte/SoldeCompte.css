@@ -25,11 +25,8 @@
     grid-template-columns: 12rem auto;
 }
 
-
-
 .configSolde {
     width: 100%;
-    margin-top: 70px;
 }
 
 .contentCompte {
@@ -186,4 +183,9 @@
     font-size: 14px;
     background-color: #2e3d5c;
     color: silver;
+}
+
+.contentSoldeCompte .contentCompte h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
