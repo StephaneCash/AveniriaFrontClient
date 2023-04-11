@@ -17,7 +17,8 @@ const AppContext = () => {
     const [dataTransfert, setDataTransfert] = useState(null);
     const [userDataCompte, setUserDataCompte] = useState(null);
     const [pretData, setPretData] = useState({});
-  const [heureActuelle, setHeureActuelle] = useState(true);
+    const [heureActuelle, setHeureActuelle] = useState(true);
+    const [passTransaction, setPassTransaction] = useState("");
 
     const [jwt, setJwt] = useState('');
 
@@ -86,6 +87,17 @@ const AppContext = () => {
             });
     };
 
+    const getPinTransactionUser = () => {
+        axios
+            .get(`${baseUrl}/passwords_user_transactions/${uid}`)
+            .then(resp => {
+                setPassTransaction(resp.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
+
     useEffect(() => {
         verifUserConnected();
     }, [jwt]);
@@ -98,6 +110,7 @@ const AppContext = () => {
             getPictureUser();
             getInfosUser();
             getInfosPaiement();
+            getPinTransactionUser();
         };
     }, [uid]);
 
@@ -118,7 +131,7 @@ const AppContext = () => {
                 compteUser, userData, photoUser, activeStep,
                 infosUser, setInfosUser, InfosPaiement, uid,
                 setActiveStep, setDataTransfert, dataTransfert, setUserDataCompte, userDataCompte,
-                stepCurrent, setstepCurrent, setPretData, pretData, setUid, heureActuelle
+                stepCurrent, setstepCurrent, setPretData, pretData, setUid, heureActuelle, passTransaction
             }}
         >
             <App />

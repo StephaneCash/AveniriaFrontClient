@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useState } from 'react'
 import { UserContext } from '../../AppContext';
 import { baseUrl } from '../../bases/baseUrl';
+import { toast } from 'react-toastify';
 
 function InfosPassWord() {
 
@@ -9,20 +10,27 @@ function InfosPassWord() {
     const [nouvPin, setNouvPin] = useState('');
     const [pinRepet, setPinRepet] = useState('');
 
-    const { userData } = useContext(UserContext);
+    const { userData, passTransaction } = useContext(UserContext);
 
     const addOrUpdatePinUser = () => {
-        axios.post(`${baseUrl}/passwords_user_transactions`, {
-            password: nouvPin,
-            idUser: userData._id
-        })
-            .then(res => {
-                console.log(res)
+        if (nouvPin === pinRepet) {
+            axios.post(`${baseUrl}/passwords_user_transactions`, {
+                password: nouvPin,
+                idUser: userData._id
             })
-            .catch(err => {
-                console.log(err)
-            })
-    }
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err);
+                    toast.error(err && err.response && err.response.data && err.response.data.message);
+                })
+        } else {
+            toast.error("Les deux mots de passe ne correspondent pas");
+        }
+    };
+
+    console.log(passTransaction, " PIN USER")
 
     return (
         <div className='formSecurite'>

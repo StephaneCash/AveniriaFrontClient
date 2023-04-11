@@ -13,10 +13,7 @@ import {MenuItem} from '@mui/material';
 import "./Navbar.css"
 import logo from "../../images/logo.png"
 import { Link, useNavigate } from 'react-router-dom';
-import cookie from "js-cookie";
-import axios from 'axios';
-import { baseUrl } from '../../bases/baseUrl';
-import { FaSignOutAlt, FaUserCircle, FaUserCog, FaHome, FaDollarSign } from "react-icons/fa";
+import { FaSignOutAlt, FaUserCircle, FaUserCog, FaHome } from "react-icons/fa";
 import { UserContext } from "../../AppContext";
 
 const pages = ['', '', ''];

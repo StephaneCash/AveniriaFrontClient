@@ -7,7 +7,7 @@ import "./Card.css"
 import { useRef } from 'react';
 import { useContext } from 'react';
 import { UserContext } from '../../AppContext';
-import { FaCreditCard } from 'react-icons/fa';
+import { FaCreditCard, FaExchangeAlt, FaToggleOff, FaToggleOn } from 'react-icons/fa';
 import Laoder from '../loader/Loader';
 import invest from "../../images/invest.svg";
 import invest1 from "../../images/invest1.svg";
@@ -60,9 +60,16 @@ function Card() {
         }
     }, [userId]);
 
+    console.log(compteUser)
+
     return (
         <div className='mainDashboard'>
-            <h1>Tableau de bord  </h1>
+            <h1>Tableau de bord <span
+                style={{ color: "#6c7fa1", fontSize: "15px" }}>
+                <FaExchangeAlt size={20} color={"#efefef"} />
+                Compte {compteUser && compteUser.type}</span>
+            </h1>
+
             <div className='card' style={{
                 border: "none"
             }}>
