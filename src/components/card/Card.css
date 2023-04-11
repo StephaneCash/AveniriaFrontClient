@@ -1,91 +1,69 @@
-.appDash .cardChilds {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.appDash .cardChilds .card {
+.mainDashboard .card {
     width: 100% !important;
-    border: 1px solid red !important;
-}
-
-.appDash .cardMin {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    display: flex !important;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: transparent !important;
     border-radius: 7px;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .6rem;
-    border: 1px solid #30436a;
+    color: silver !important;
+    height: auto;
+    margin-bottom: .6rem;
 }
 
-.card .cardLastChild {
+.mainDashboard .card .card {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    border: 1px solid #26395e;
+    border-radius: 10px;
+    background-color: #0b1a34 !important;
+    padding: 1rem;
+}
+
+
+.mainDashboard .row2 {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
+    width: 100%;
 }
 
-.dashbaordMain .compteConf button {
-    padding: .5rem 2rem;
-    cursor: pointer;
+.mainDashboard .row2 .circular img {
+    width: 100% !important;
+    height: 50px;
 }
 
-.CircularProgressbar .CircularProgressbar-path {
-    stroke: #204084;
+.mainDashboard .iconD {
+    display: flex !important;
+    justify-content: flex-end !important;
+    text-align: right;
+}
+
+.mainDashboard .row3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainDashboard .row2 .valueDevise {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.mainDashboard .row3 .title {
+    font-weight: 900;
+    margin-left: 1px;
+}
+
+.mainDashboard .circular strong {
+    font-size: .8rem;
 }
 
 .CircularProgressbar .CircularProgressbar-trail {
-    stroke: #6b778f;
+    stroke: #13284d;
+    stroke-linecap: round;
 }
 
-.circular {
-    display: flex;
-    gap: 1rem;
-    border: 1px solid red;
-}
-
-.circular .cardLastChild {
-    width: 100px;
-}
-
-.apexcharts-canvas {
-    border: none !important;
-}
-
-.apexcharts-gridline {
-    stroke: #1e2942;
-}
-
-.apexcharts-xaxis-tick {
-    stroke: var(--neutral-70);
-}
-
-.apexcharts-yaxis-tick {
-    stroke: var(--neutral-70);
-}
-
-.apexcharts-grid-row {
-    fill: var(--neutral-70);
-}
-
-.apexcharts-title-text {
-    fill: var(--neutral-100);
-}
-
-.cardsCircular {
-    display: flex;
-    justify-content: center;
-    gap: .5rem;
-}
-
-.cardsCircular .card {
-    height: auto !important;
-    margin-top: 2rem !important;
-    height: 200px !important;
-    text-align: center !important;
-    border: 1px solid #536999 !important;
-    border-radius: 2px !important;
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: #496390;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
 }

@@ -28,6 +28,7 @@ const SignIn = () => {
             axios.post(`${baseUrl}/users/login`, { email, password })
                 .then(resp => {
                     document.cookie = `jwt=${resp.data.token}; max-age=${maxAge}`;
+                    console.log(resp)
                     toast.success("Vous êtes connecté avec succès");
                     setTimeout(() => {
                         if (resp.status && resp.data && resp.data.token && resp.data.token) {
@@ -41,6 +42,7 @@ const SignIn = () => {
                 .catch(err => {
                     toast.error(err.response && err.response.data && err.response.data.message)
                     setBtnClic(false);
+                    console.log(err.response)
                 });
         } else {
             toast.error('Veuillez cochez la case du reCAPTCHA');

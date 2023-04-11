@@ -31,8 +31,9 @@
 }
 
 .dashboard h1 {
-    color: #fff;
-    margin-left: 2rem;
+    color: #ddd;
+    display: flex;
+    gap: 1rem;
 }
 
 .noti {
@@ -50,21 +51,6 @@
 .dashboard .cards .card:last-child {
     width: 470px !important;
 }
-
-.dashboard .card {
-    width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 1rem !important;
-    height: 400px !important;
-    background-color: #182e55 !important;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    border-radius: 7px;
-    padding: 2rem;
-    color: silver !important;
-}
-
 .dashbaordMain .compteConf {
     display: flex;
     flex-direction: column;
